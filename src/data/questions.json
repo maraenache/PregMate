@@ -1,1 +1,1822 @@
-[]
+[
+  {
+    "id": "unghiuri-q01",
+    "lessonId": "unghiuri",
+    "question": "Un unghi este figura geometrică formată de:",
+    "options": [
+      "două drepte paralele",
+      "două semidrepte cu aceeași origine",
+      "trei segmente",
+      "un segment și o dreaptă"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un unghi este figura geometrică formată de două semidrepte cu aceeași origine (vârful unghiului).",
+    "sourcePage": 1
+  },
+  {
+    "id": "unghiuri-q02",
+    "lessonId": "unghiuri",
+    "question": "În notația ∠AOB, vârful unghiului este:",
+    "options": [
+      "A",
+      "B",
+      "O",
+      "segmentul AB"
+    ],
+    "correctIndex": 2,
+    "explanation": "Litera vârfului este întotdeauna la mijloc, deci vârful lui ∠AOB este O.",
+    "sourcePage": 1
+  },
+  {
+    "id": "unghiuri-q03",
+    "lessonId": "unghiuri",
+    "question": "Câte minute are un grad?",
+    "options": [
+      "10′",
+      "60′",
+      "100′",
+      "3600′"
+    ],
+    "correctIndex": 1,
+    "explanation": "1° = 60′ (și 1° = 3600″).",
+    "sourcePage": 1
+  },
+  {
+    "id": "unghiuri-q04",
+    "lessonId": "unghiuri",
+    "question": "Un unghi obtuz are măsura:",
+    "options": [
+      "egală cu 90°",
+      "între 0° și 90°",
+      "între 90° și 180°",
+      "egală cu 180°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Unghiul obtuz verifică 90° < m(∠) < 180°: este mai mare decât un unghi drept.",
+    "sourcePage": 1
+  },
+  {
+    "id": "unghiuri-q05",
+    "lessonId": "unghiuri",
+    "question": "Cum se numește unghiul de 180°, ale cărui laturi sunt semidrepte opuse?",
+    "options": [
+      "unghi alungit",
+      "unghi drept",
+      "unghi nul",
+      "unghi obtuz"
+    ],
+    "correctIndex": 0,
+    "explanation": "Unghiul alungit are 180°, iar laturile lui sunt semidrepte opuse.",
+    "sourcePage": 1
+  },
+  {
+    "id": "unghiuri-q06",
+    "lessonId": "unghiuri",
+    "question": "Complementul unghiului de 23° este:",
+    "options": [
+      "57°",
+      "67°",
+      "77°",
+      "157°"
+    ],
+    "correctIndex": 1,
+    "explanation": "Complementul lui x este 90° − x, deci 90° − 23° = 67°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "unghiuri-q07",
+    "lessonId": "unghiuri",
+    "question": "Suplementul unghiului de 54° este:",
+    "options": [
+      "36°",
+      "126°",
+      "136°",
+      "146°"
+    ],
+    "correctIndex": 1,
+    "explanation": "Suplementul lui x este 180° − x, deci 180° − 54° = 126°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "unghiuri-q08",
+    "lessonId": "unghiuri",
+    "question": "OP este bisectoarea lui ∠MON și m(∠MOP) = 35°. Cât este m(∠MON)?",
+    "options": [
+      "17°30′",
+      "35°",
+      "70°",
+      "105°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pentru bisectoare, m(∠MON) = 2 · m(∠MOP) = 2 · 35° = 70°.",
+    "sourcePage": 2
+  },
+  {
+    "id": "unghiuri-q09",
+    "lessonId": "unghiuri",
+    "question": "Unghiurile opuse la vârf, formate de două drepte care se intersectează, sunt:",
+    "options": [
+      "complementare",
+      "întotdeauna egale",
+      "adiacente",
+      "întotdeauna drepte"
+    ],
+    "correctIndex": 1,
+    "explanation": "Unghiurile aflate față în față la intersecția a două drepte se numesc opuse la vârf și sunt întotdeauna egale.",
+    "sourcePage": 2
+  },
+  {
+    "id": "unghiuri-q10",
+    "lessonId": "unghiuri",
+    "question": "Raza OB este în interiorul lui ∠AOC, m(∠AOB) = 30° și m(∠BOC) = 40°. Cât este m(∠AOC)?",
+    "options": [
+      "10°",
+      "40°",
+      "70°",
+      "110°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pentru unghiuri adiacente, m(∠AOB) + m(∠BOC) = m(∠AOC) = 30° + 40° = 70°.",
+    "sourcePage": 2
+  },
+  {
+    "id": "triunghiuri-q01",
+    "lessonId": "triunghiuri",
+    "question": "Suma măsurilor unghiurilor unui triunghi este:",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "correctIndex": 1,
+    "explanation": "Într-un triunghi, ∠A + ∠B + ∠C = 180°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-q02",
+    "lessonId": "triunghiuri",
+    "question": "Cum se numește suma lungimilor laturilor unui triunghi?",
+    "options": [
+      "aria",
+      "perimetrul",
+      "mediana",
+      "înălțimea"
+    ],
+    "correctIndex": 1,
+    "explanation": "Suma laturilor se numește perimetru (P△ABC).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-q03",
+    "lessonId": "triunghiuri",
+    "question": "Într-un triunghi echilateral, fiecare unghi are:",
+    "options": [
+      "45°",
+      "60°",
+      "90°",
+      "120°"
+    ],
+    "correctIndex": 1,
+    "explanation": "În triunghiul echilateral, ∠A = ∠B = ∠C = 60°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-q04",
+    "lessonId": "triunghiuri",
+    "question": "În triunghiul isoscel ABC cu AB = AC, care unghiuri sunt egale?",
+    "options": [
+      "∠A și ∠B",
+      "∠A și ∠C",
+      "∠B și ∠C",
+      "niciunul"
+    ],
+    "correctIndex": 2,
+    "explanation": "La triunghiul isoscel, unghiurile de la bază sunt egale: ∠B = ∠C.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-q05",
+    "lessonId": "triunghiuri",
+    "question": "Triunghiul ABC are ∠A = 50° și ∠B = 60°. Cât este ∠C?",
+    "options": [
+      "60°",
+      "70°",
+      "80°",
+      "110°"
+    ],
+    "correctIndex": 1,
+    "explanation": "Suma unghiurilor este 180°, deci ∠C = 180° − 50° − 60° = 70°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-q06",
+    "lessonId": "triunghiuri",
+    "question": "Un triunghi cu toate unghiurile mai mici de 90° este:",
+    "options": [
+      "obtuzunghic",
+      "dreptunghic",
+      "ascuțitunghic",
+      "alungit"
+    ],
+    "correctIndex": 2,
+    "explanation": "Dacă toate unghiurile sunt mai mici decât 90°, triunghiul este ascuțitunghic.",
+    "sourcePage": 2
+  },
+  {
+    "id": "triunghiuri-q07",
+    "lessonId": "triunghiuri",
+    "question": "Un triunghi care are un unghi mai mare de 90° este:",
+    "options": [
+      "ascuțitunghic",
+      "dreptunghic",
+      "echilateral",
+      "obtuzunghic"
+    ],
+    "correctIndex": 3,
+    "explanation": "Dacă un unghi este mai mare decât 90°, triunghiul este obtuzunghic.",
+    "sourcePage": 2
+  },
+  {
+    "id": "triunghiuri-q08",
+    "lessonId": "triunghiuri",
+    "question": "Care afirmație este adevărată?",
+    "options": [
+      "Un triunghi poate avea două unghiuri obtuze.",
+      "Un triunghi nu poate avea două unghiuri drepte.",
+      "Suma unghiurilor unui triunghi este 360°.",
+      "Un triunghi poate avea două unghiuri drepte."
+    ],
+    "correctIndex": 1,
+    "explanation": "Fișa precizează că un triunghi nu poate avea două unghiuri drepte sau două unghiuri obtuze.",
+    "sourcePage": 2
+  },
+  {
+    "id": "triunghiuri-q09",
+    "lessonId": "triunghiuri",
+    "question": "Într-un triunghi, cel mai mare unghi este opus:",
+    "options": [
+      "celei mai scurte laturi",
+      "celei mai lungi laturi",
+      "medianei",
+      "oricărei laturi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cel mai mare unghi este opus celei mai lungi laturi.",
+    "sourcePage": 2
+  },
+  {
+    "id": "triunghiuri-q10",
+    "lessonId": "triunghiuri",
+    "question": "Un triunghi poate fi în același timp:",
+    "options": [
+      "isoscel și dreptunghic",
+      "echilateral și dreptunghic",
+      "dreptunghic și obtuzunghic",
+      "echilateral și obtuzunghic"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fișa dă exemplul unui triunghi isoscel și dreptunghic. Echilateralul are toate unghiurile de 60°, iar un unghi drept și unul obtuz ar depăși suma de 180°.",
+    "sourcePage": 2
+  },
+  {
+    "id": "cercul-q01",
+    "lessonId": "cercul",
+    "question": "Coarda care trece prin centrul cercului se numește:",
+    "options": [
+      "rază",
+      "diametru",
+      "arc",
+      "tangentă"
+    ],
+    "correctIndex": 1,
+    "explanation": "Diametrul este coarda care trece prin centru.",
+    "sourcePage": 1
+  },
+  {
+    "id": "cercul-q02",
+    "lessonId": "cercul",
+    "question": "Relația dintre diametrul d și raza R este:",
+    "options": [
+      "d = R",
+      "d = 2R",
+      "d = R²",
+      "d = πR"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fișa dă formula d = 2R.",
+    "sourcePage": 1
+  },
+  {
+    "id": "cercul-q03",
+    "lessonId": "cercul",
+    "question": "Lungimea cercului de rază R este:",
+    "options": [
+      "\\(\\pi R^2\\)",
+      "\\(2\\pi R\\)",
+      "\\(\\pi R\\)",
+      "\\(4\\pi R\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(L = 2\\pi R = \\pi d\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "cercul-q04",
+    "lessonId": "cercul",
+    "question": "Aria discului de rază R este:",
+    "options": [
+      "\\(2\\pi R\\)",
+      "\\(\\pi d\\)",
+      "\\(\\pi R^2\\)",
+      "\\(2R\\)"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\mathcal{A}_{\\text{disc}} = \\pi R^2\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "cercul-q05",
+    "lessonId": "cercul",
+    "question": "Unghiul la centru ∠AOB are 70°. Cât este măsura arcului AB?",
+    "options": [
+      "35°",
+      "70°",
+      "140°",
+      "290°"
+    ],
+    "correctIndex": 1,
+    "explanation": "Măsura arcului este egală cu măsura unghiului la centru corespunzător: m(AB) = m(∠AOB) = 70°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "cercul-q06",
+    "lessonId": "cercul",
+    "question": "Unghiul înscris ∠APB are 40°. Cât este măsura arcului AB?",
+    "options": [
+      "20°",
+      "40°",
+      "80°",
+      "140°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pentru unghiul înscris, m(AB) = 2 · m(∠APB) = 2 · 40° = 80°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "cercul-q07",
+    "lessonId": "cercul",
+    "question": "În ce unități se măsoară o coardă?",
+    "options": [
+      "în grade, minute și secunde",
+      "în cm, m etc.",
+      "numai în grade",
+      "în radiani"
+    ],
+    "correctIndex": 1,
+    "explanation": "Arcul se măsoară în grade, minute și secunde, iar coarda în cm, m etc.",
+    "sourcePage": 1
+  },
+  {
+    "id": "cercul-q08",
+    "lessonId": "cercul",
+    "question": "Suma măsurilor arcelor AB, BC și CA determinate de un triunghi ABC înscris în cerc este:",
+    "options": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "correctIndex": 3,
+    "explanation": "Suma arcelor unui cerc este 360°: m(AB) + m(BC) + m(CA) = 360°.",
+    "sourcePage": 2
+  },
+  {
+    "id": "cercul-q09",
+    "lessonId": "cercul",
+    "question": "Raza dusă la punctul de tangență este, față de tangentă:",
+    "options": [
+      "paralelă",
+      "perpendiculară",
+      "egală cu ea",
+      "bisectoare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Raza dusă la punctul de tangență este perpendiculară pe tangentă.",
+    "sourcePage": 2
+  },
+  {
+    "id": "cercul-q10",
+    "lessonId": "cercul",
+    "question": "BA și BC sunt tangente la cerc în A și C. Dacă BA = 7 cm, atunci BC este:",
+    "options": [
+      "3,5 cm",
+      "7 cm",
+      "14 cm",
+      "nu se poate afla"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pentru două tangente duse din același punct, BA = BC, deci BC = 7 cm.",
+    "sourcePage": 2
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q01",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "Cum se numesc laturile care pornesc din unghiul drept?",
+    "options": [
+      "ipotenuze",
+      "catete",
+      "mediane",
+      "bisectoare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Laturile care pornesc din unghiul drept se numesc catete.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q02",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "Latura opusă unghiului drept se numește:",
+    "options": [
+      "catetă",
+      "mediană",
+      "ipotenuză",
+      "înălțime"
+    ],
+    "correctIndex": 2,
+    "explanation": "Latura opusă unghiului drept se numește ipotenuză.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q03",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "În triunghiul ABC cu ∠A = 90°, teorema lui Pitagora se scrie:",
+    "options": [
+      "AB² = BC² + AC²",
+      "BC² = AB² + AC²",
+      "AC² = AB² + BC²",
+      "BC = AB + AC"
+    ],
+    "correctIndex": 1,
+    "explanation": "BC este ipotenuza, deci BC² = AB² + AC².",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q04",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "În triunghiul ABC cu ∠A = 90°, AB = 3 cm și AC = 4 cm. Cât este BC?",
+    "options": [
+      "5 cm",
+      "7 cm",
+      "12 cm",
+      "25 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "BC² = 3² + 4² = 9 + 16 = 25, deci BC = 5 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q05",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "În triunghiul ABC cu ∠A = 90°, AB = 6 cm și AC = 8 cm. Cât este BC?",
+    "options": [
+      "10 cm",
+      "14 cm",
+      "48 cm",
+      "100 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "BC² = 36 + 64 = 100, deci BC = 10 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q06",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "Într-un triunghi dreptunghic, mediana dusă din unghiul drept este:",
+    "options": [
+      "egală cu ipotenuza",
+      "dublul ipotenuzei",
+      "jumătate din ipotenuză",
+      "egală cu o catetă"
+    ],
+    "correctIndex": 2,
+    "explanation": "Teorema medianei: \\(AM = \\frac{ip}{2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q07",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "În triunghiul dreptunghic ABC (∠A = 90°), BC = 12 cm și M este mijlocul lui BC. Cât este AM?",
+    "options": [
+      "3 cm",
+      "6 cm",
+      "12 cm",
+      "24 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(AM = \\frac{BC}{2} = \\frac{12}{2} = 6\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q08",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "În teorema medianei din fișă, punctul M este:",
+    "options": [
+      "vârful unghiului drept",
+      "mijlocul ipotenuzei BC",
+      "mijlocul catetei AB",
+      "piciorul înălțimii"
+    ],
+    "correctIndex": 1,
+    "explanation": "M este mijlocul ipotenuzei BC.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q09",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "Într-un triunghi dreptunghic cu un unghi de 30°, cateta opusă unghiului de 30° este:",
+    "options": [
+      "egală cu ipotenuza",
+      "jumătate din ipotenuză",
+      "dublul ipotenuzei",
+      "egală cu cealaltă catetă"
+    ],
+    "correctIndex": 1,
+    "explanation": "Teorema unghiului de 30°: cateta opusă unghiului de 30° este jumătate din ipotenuză.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-q10",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "question": "În triunghiul ABC cu ∠A = 90° și ∠C = 30°, BC = 10 cm. Cât este AB?",
+    "options": [
+      "5 cm",
+      "10 cm",
+      "15 cm",
+      "20 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "AB este opusă unghiului de 30°, deci \\(AB = \\frac{BC}{2} = 5\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q01",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "În triunghiul dreptunghic ABC (∠A = 90°) cu înălțimea AD, proiecția punctului A pe ipotenuză este:",
+    "options": [
+      "B",
+      "C",
+      "D",
+      "mijlocul lui BC"
+    ],
+    "correctIndex": 2,
+    "explanation": "Proiecția punctului A pe ipotenuză este D.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q02",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "Proiecția catetei AC pe ipotenuză este:",
+    "options": [
+      "BD",
+      "CD",
+      "AD",
+      "BC"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fișa precizează că proiecția catetei AC pe ipotenuză este CD.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q03",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "Teorema înălțimii se scrie:",
+    "options": [
+      "AD² = BD · DC",
+      "AD = BD + DC",
+      "AD² = BD · BC",
+      "AD² = AB · AC"
+    ],
+    "correctIndex": 0,
+    "explanation": "Teorema înălțimii: AD² = BD · DC (h² = p₁ · p₂).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q04",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "BD = 4 cm și DC = 9 cm. Cât este înălțimea AD?",
+    "options": [
+      "5 cm",
+      "6 cm",
+      "13 cm",
+      "36 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "AD² = 4 · 9 = 36, deci AD = 6 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q05",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "Teorema catetei pentru cateta AB se scrie:",
+    "options": [
+      "AB² = BD · DC",
+      "AB² = BD · BC",
+      "AB² = CD · BC",
+      "AB = BD · BC"
+    ],
+    "correctIndex": 1,
+    "explanation": "Proiecția lui AB pe ipotenuză este BD, deci AB² = BD · BC.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q06",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "BD = 2 cm și BC = 8 cm. Cât este cateta AB?",
+    "options": [
+      "4 cm",
+      "6 cm",
+      "10 cm",
+      "16 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "AB² = BD · BC = 2 · 8 = 16, deci AB = 4 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q07",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "Formula înălțimii pe ipotenuză este:",
+    "options": [
+      "\\(h = \\frac{c_1 \\cdot c_2}{ip}\\)",
+      "\\(h = \\frac{ip}{2}\\)",
+      "\\(h = c_1 + c_2\\)",
+      "\\(h = \\frac{c_1 \\cdot c_2}{2}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(h = \\frac{c_1 \\cdot c_2}{ip} = \\frac{AB \\cdot AC}{BC}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q08",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "AB = 6 cm, AC = 8 cm și BC = 10 cm. Cât este înălțimea AD?",
+    "options": [
+      "2,4 cm",
+      "4,8 cm",
+      "7 cm",
+      "24 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(AD = \\frac{6 \\cdot 8}{10} = 4{,}8\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q09",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "Catetele unui triunghi dreptunghic au 6 cm și 8 cm. Aria triunghiului este:",
+    "options": [
+      "14 cm²",
+      "24 cm²",
+      "48 cm²",
+      "96 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{c_1 \\cdot c_2}{2} = \\frac{6 \\cdot 8}{2} = 24\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-q10",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "question": "Ipotenuza unui triunghi dreptunghic are 10 cm, iar înălțimea pe ipotenuză are 3 cm. Aria este:",
+    "options": [
+      "13 cm²",
+      "15 cm²",
+      "30 cm²",
+      "60 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{ip \\cdot h}{2} = \\frac{10 \\cdot 3}{2} = 15\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q01",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Sinusul unui unghi ascuțit x dintr-un triunghi dreptunghic este:",
+    "options": [
+      "\\(\\frac{\\text{cateta opusă}}{\\text{ipotenuză}}\\)",
+      "\\(\\frac{\\text{cateta alăturată}}{\\text{ipotenuză}}\\)",
+      "\\(\\frac{\\text{cateta opusă}}{\\text{cateta alăturată}}\\)",
+      "\\(\\frac{\\text{ipotenuză}}{\\text{cateta opusă}}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(\\sin x = \\frac{\\text{cateta opusă}}{\\text{ipotenuză}}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q02",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "În triunghiul ABC dreptunghic în A, cos C este:",
+    "options": [
+      "\\(\\frac{AB}{BC}\\)",
+      "\\(\\frac{AC}{BC}\\)",
+      "\\(\\frac{AB}{AC}\\)",
+      "\\(\\frac{AC}{AB}\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cateta alăturată unghiului C este AC, deci \\(\\cos C = \\frac{AC}{BC}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q03",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "În triunghiul ABC dreptunghic în A, tg C este:",
+    "options": [
+      "\\(\\frac{AB}{BC}\\)",
+      "\\(\\frac{AC}{BC}\\)",
+      "\\(\\frac{AB}{AC}\\)",
+      "\\(\\frac{AC}{AB}\\)"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\operatorname{tg} C = \\frac{\\text{cateta opusă}}{\\text{cateta alăturată}} = \\frac{AB}{AC}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q04",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Cotangenta unui unghi ascuțit x este:",
+    "options": [
+      "\\(\\frac{\\text{cateta opusă}}{\\text{ipotenuză}}\\)",
+      "\\(\\frac{\\text{cateta alăturată}}{\\text{cateta opusă}}\\)",
+      "\\(\\frac{\\text{cateta opusă}}{\\text{cateta alăturată}}\\)",
+      "\\(\\frac{\\text{cateta alăturată}}{\\text{ipotenuză}}\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\operatorname{ctg} x = \\frac{\\text{cateta alăturată}}{\\text{cateta opusă}}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q05",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Care relație este adevărată pentru orice x ∈ (0°, 90°)?",
+    "options": [
+      "\\(\\sin x + \\cos x = 1\\)",
+      "\\(\\sin^2 x + \\cos^2 x = 1\\)",
+      "\\(\\sin^2 x - \\cos^2 x = 1\\)",
+      "\\(\\sin x \\cdot \\cos x = 1\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fișa dă relația \\(\\sin^2 x + \\cos^2 x = 1\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q06",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Cât este sin 30°?",
+    "options": [
+      "\\(\\frac{1}{2}\\)",
+      "\\(\\frac{\\sqrt{2}}{2}\\)",
+      "\\(\\frac{\\sqrt{3}}{2}\\)",
+      "\\(1\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Din tabelul valorilor uzuale, \\(\\sin 30^\\circ = \\frac{1}{2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q07",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Cât este cos 30°?",
+    "options": [
+      "\\(\\frac{1}{2}\\)",
+      "\\(\\frac{\\sqrt{2}}{2}\\)",
+      "\\(\\frac{\\sqrt{3}}{2}\\)",
+      "\\(\\sqrt{3}\\)"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q08",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Cât este tg 45°?",
+    "options": [
+      "\\(\\frac{\\sqrt{3}}{3}\\)",
+      "\\(1\\)",
+      "\\(\\sqrt{3}\\)",
+      "\\(\\frac{\\sqrt{2}}{2}\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\operatorname{tg} 45^\\circ = 1\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q09",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Cât este tg 60°?",
+    "options": [
+      "\\(\\frac{\\sqrt{3}}{3}\\)",
+      "\\(1\\)",
+      "\\(\\sqrt{3}\\)",
+      "\\(\\frac{1}{2}\\)"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\operatorname{tg} 60^\\circ = \\sqrt{3}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-q10",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "question": "Care funcții trigonometrice folosesc ipotenuza la numitor?",
+    "options": [
+      "sin și cos",
+      "tg și ctg",
+      "sin și tg",
+      "cos și ctg"
+    ],
+    "correctIndex": 0,
+    "explanation": "Observația din fișă: sin și cos folosesc ipotenuza la numitor, iar tg și ctg folosesc catetele.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q01",
+    "lessonId": "centrul-de-greutate",
+    "question": "Mediana unui triunghi este segmentul care unește un vârf cu:",
+    "options": [
+      "mijlocul laturii opuse",
+      "piciorul perpendicularei pe latura opusă",
+      "centrul cercului",
+      "un alt vârf"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mediana unește un vârf al triunghiului cu mijlocul laturii opuse.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q02",
+    "lessonId": "centrul-de-greutate",
+    "question": "Medianele unui triunghi se intersectează într-un punct numit:",
+    "options": [
+      "ortocentru",
+      "centrul de greutate",
+      "centrul cercului înscris",
+      "mijlocul laturii"
+    ],
+    "correctIndex": 1,
+    "explanation": "Medianele se intersectează în centrul de greutate G.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q03",
+    "lessonId": "centrul-de-greutate",
+    "question": "Dacă G este centrul de greutate și AM este mediană, atunci AG este:",
+    "options": [
+      "\\(\\frac{1}{3} \\cdot AM\\)",
+      "\\(\\frac{1}{2} \\cdot AM\\)",
+      "\\(\\frac{2}{3} \\cdot AM\\)",
+      "\\(AM\\)"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(AG = \\frac{2}{3} \\cdot AM\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q04",
+    "lessonId": "centrul-de-greutate",
+    "question": "Mediana AM are 9 cm. Cât este AG?",
+    "options": [
+      "3 cm",
+      "4,5 cm",
+      "6 cm",
+      "9 cm"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(AG = \\frac{2}{3} \\cdot 9 = 6\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q05",
+    "lessonId": "centrul-de-greutate",
+    "question": "Mediana AM are 12 cm. Cât este GM?",
+    "options": [
+      "3 cm",
+      "4 cm",
+      "6 cm",
+      "8 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(GM = \\frac{1}{3} \\cdot 12 = 4\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q06",
+    "lessonId": "centrul-de-greutate",
+    "question": "În ce raport împarte centrul de greutate fiecare mediană (de la vârf spre mijlocul laturii)?",
+    "options": [
+      "1 : 1",
+      "1 : 2",
+      "2 : 1",
+      "3 : 1"
+    ],
+    "correctIndex": 2,
+    "explanation": "G împarte fiecare mediană în raport 2 : 1.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q07",
+    "lessonId": "centrul-de-greutate",
+    "question": "BG = 8 cm, unde BN este mediană și G centrul de greutate. Cât este BN?",
+    "options": [
+      "10 cm",
+      "12 cm",
+      "16 cm",
+      "24 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(BG = \\frac{2}{3} \\cdot BN\\), deci \\(BN = \\frac{3}{2} \\cdot 8 = 12\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q08",
+    "lessonId": "centrul-de-greutate",
+    "question": "Mediana AM împarte triunghiul ABC în două triunghiuri care au:",
+    "options": [
+      "arii egale",
+      "perimetre egale",
+      "toate laturile egale",
+      "unghiuri drepte"
+    ],
+    "correctIndex": 0,
+    "explanation": "În orice triunghi, mediana împarte triunghiul în două triunghiuri cu arii egale: A△ABM = A△ACM.",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q09",
+    "lessonId": "centrul-de-greutate",
+    "question": "Aria triunghiului ABC este 30 cm², iar AM este mediană. Cât este aria triunghiului ABM?",
+    "options": [
+      "10 cm²",
+      "15 cm²",
+      "20 cm²",
+      "30 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "A△ABM = A△ACM, iar împreună formează △ABC, deci A△ABM = 30 : 2 = 15 cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "centrul-de-greutate-q10",
+    "lessonId": "centrul-de-greutate",
+    "question": "Aria triunghiului ABC este 36 cm², iar G este centrul de greutate. Cât este aria triunghiului ABG?",
+    "options": [
+      "9 cm²",
+      "12 cm²",
+      "18 cm²",
+      "24 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "G împarte triunghiul în trei triunghiuri cu arii egale, deci A△ABG = 36 : 3 = 12 cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q01",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Două triunghiuri sunt asemenea dacă:",
+    "options": [
+      "au același perimetru",
+      "au unghiurile corespunzătoare egale și laturile corespunzătoare proporționale",
+      "au aceeași arie",
+      "au o latură comună"
+    ],
+    "correctIndex": 1,
+    "explanation": "Triunghiurile asemenea au aceeași formă: unghiuri corespunzătoare egale și laturi corespunzătoare proporționale.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q02",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Dacă △ABC ∼ △DEF, vârfului B îi corespunde vârful:",
+    "options": [
+      "D",
+      "E",
+      "F",
+      "C"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ordinea literelor arată corespondența: A ↔ D, B ↔ E, C ↔ F.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q03",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Numărul k din relația \\(\\frac{AB}{DE} = \\frac{BC}{EF} = \\frac{AC}{DF} = k\\) se numește:",
+    "options": [
+      "raport de asemănare",
+      "raportul ariilor",
+      "coeficient de arie",
+      "perimetru"
+    ],
+    "correctIndex": 0,
+    "explanation": "Numărul k se numește raport de asemănare.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q04",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Raportul perimetrelor a două triunghiuri asemenea este egal cu:",
+    "options": [
+      "k",
+      "k²",
+      "2k",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Raportul perimetrelor este egal cu raportul de asemănare k.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q05",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Raportul ariilor a două triunghiuri asemenea este egal cu:",
+    "options": [
+      "k",
+      "k²",
+      "2k",
+      "\\(\\frac{k}{2}\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "Raportul ariilor este pătratul raportului de asemănare: k².",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q06",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "△ABC ∼ △DEF cu raportul de asemănare k = 3. Cât este raportul ariilor A△ABC / A△DEF?",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "27"
+    ],
+    "correctIndex": 2,
+    "explanation": "Raportul ariilor este k² = 3² = 9.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q07",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "△ABC ∼ △DEF, k = 2 și perimetrul lui △ABC este 10 cm. Cât este perimetrul lui △DEF?",
+    "options": [
+      "5 cm",
+      "10 cm",
+      "20 cm",
+      "40 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "P△ABC / P△DEF = k = 2, deci P△DEF = 10 : 2 = 5 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q08",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Dacă PQ ∥ CB (P pe AC, Q pe AB), atunci asemănarea scrisă corect este:",
+    "options": [
+      "△APQ ∼ △ABC",
+      "△APQ ∼ △ACB",
+      "△PAQ ∼ △ABC",
+      "△AQP ∼ △ACB"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fișa atrage atenția la ordine: △APQ ∼ △ACB (P ↔ C, Q ↔ B).",
+    "sourcePage": 1
+  },
+  {
+    "id": "triunghiuri-asemenea-q09",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Dacă ∠E = ∠C și ∠F = ∠B, ce asemănare se obține în cazul III din fișă?",
+    "options": [
+      "△AEF ∼ △ABC",
+      "△AEF ∼ △ACB",
+      "△AFE ∼ △ACB",
+      "△EAF ∼ △CBA"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fișa: dacă ∠E = ∠C și ∠F = ∠B, atunci △AEF ∼ △ACB.",
+    "sourcePage": 2
+  },
+  {
+    "id": "triunghiuri-asemenea-q10",
+    "lessonId": "triunghiuri-asemenea",
+    "question": "Pentru △ABO ∼ △CDO (cazul IV din fișă), \\(\\frac{AO}{OC}\\) este egal cu:",
+    "options": [
+      "\\(\\frac{BO}{OD}\\)",
+      "\\(\\frac{OD}{BO}\\)",
+      "\\(\\frac{AB}{AO}\\)",
+      "\\(\\frac{OC}{AO}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(\\frac{AO}{OC} = \\frac{BO}{OD} = \\frac{AB}{CD} = k\\).",
+    "sourcePage": 2
+  },
+  {
+    "id": "thales-asemanare-q01",
+    "lessonId": "thales-asemanare",
+    "question": "Teorema lui Thales afirmă că, într-un triunghi, o paralelă dusă la una dintre laturi:",
+    "options": [
+      "determină pe celelalte două laturi segmente proporționale",
+      "este întotdeauna linie mijlocie",
+      "este perpendiculară pe celelalte laturi",
+      "împarte triunghiul în arii egale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Într-un triunghi, o paralelă dusă la una dintre laturi determină pe celelalte două laturi segmente proporționale.",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q02",
+    "lessonId": "thales-asemanare",
+    "question": "În triunghiul din fișă, cu ED ∥ BC (E pe AC, D pe AB), \\(\\frac{AE}{EC}\\) este egal cu:",
+    "options": [
+      "\\(\\frac{AD}{DB}\\)",
+      "\\(\\frac{DB}{AD}\\)",
+      "\\(\\frac{AD}{AB}\\)",
+      "\\(\\frac{ED}{BC}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Teorema lui Thales: \\(\\frac{AE}{EC} = \\frac{AD}{DB}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q03",
+    "lessonId": "thales-asemanare",
+    "question": "ED ∥ BC, AE = 2 cm, EC = 3 cm și AD = 4 cm. Cât este DB?",
+    "options": [
+      "5 cm",
+      "6 cm",
+      "8 cm",
+      "1,5 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\frac{2}{3} = \\frac{4}{DB}\\), deci DB = 6 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q04",
+    "lessonId": "thales-asemanare",
+    "question": "ED ∥ BC, EC = 2 cm, AC = 8 cm și AB = 12 cm. Cât este DB?",
+    "options": [
+      "2 cm",
+      "3 cm",
+      "4 cm",
+      "6 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\frac{EC}{AC} = \\frac{DB}{AB}\\): \\(\\frac{2}{8} = \\frac{DB}{12}\\), deci DB = 3 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q05",
+    "lessonId": "thales-asemanare",
+    "question": "În configurația cu AB ∥ DC și diagonalele care se intersectează în O, \\(\\frac{AO}{OC}\\) este egal cu:",
+    "options": [
+      "\\(\\frac{BO}{OD}\\)",
+      "\\(\\frac{OD}{BO}\\)",
+      "\\(\\frac{AB}{AO}\\)",
+      "\\(\\frac{OC}{AC}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(\\frac{AO}{OC} = \\frac{BO}{OD}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q06",
+    "lessonId": "thales-asemanare",
+    "question": "AB ∥ DC, AO = 3 cm, OC = 6 cm și BO = 2 cm. Cât este OD?",
+    "options": [
+      "1 cm",
+      "4 cm",
+      "6 cm",
+      "9 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\frac{3}{6} = \\frac{2}{OD}\\), deci OD = 4 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q07",
+    "lessonId": "thales-asemanare",
+    "question": "Dacă DE ∥ BC, ce asemănare rezultă din teorema asemănării?",
+    "options": [
+      "△ADE ∼ △ABC",
+      "△ADE ∼ △ACB",
+      "△AED ∼ △ABC",
+      "△DAE ∼ △BCA"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fișa: dacă DE ∥ BC, atunci △ADE ∼ △ABC.",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q08",
+    "lessonId": "thales-asemanare",
+    "question": "DE ∥ BC, AD = 2 cm, AB = 6 cm și BC = 9 cm. Cât este ED?",
+    "options": [
+      "2 cm",
+      "3 cm",
+      "4,5 cm",
+      "6 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\frac{AD}{AB} = \\frac{ED}{BC}\\): \\(\\frac{2}{6} = \\frac{ED}{9}\\), deci ED = 3 cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q09",
+    "lessonId": "thales-asemanare",
+    "question": "Care este diferența, conform fișei, dintre teorema lui Thales și asemănare?",
+    "options": [
+      "La asemănare folosim doar laturi întregi de triunghi, iar la Thales segmente de pe două laturi.",
+      "Nu există nicio diferență.",
+      "La Thales folosim doar laturi întregi de triunghi.",
+      "Asemănarea se aplică doar triunghiurilor dreptunghice."
+    ],
+    "correctIndex": 0,
+    "explanation": "Fișa: la Thales folosim segmente de pe două laturi, iar la asemănare doar laturi întregi de triunghi.",
+    "sourcePage": 1
+  },
+  {
+    "id": "thales-asemanare-q10",
+    "lessonId": "thales-asemanare",
+    "question": "Dacă DE ∥ BC, care egalitate de rapoarte exprimă asemănarea △ADE ∼ △ABC?",
+    "options": [
+      "\\(\\frac{AE}{AC} = \\frac{AD}{AB} = \\frac{ED}{BC}\\)",
+      "\\(\\frac{AE}{EC} = \\frac{AD}{AB} = \\frac{ED}{BC}\\)",
+      "\\(\\frac{AC}{AE} = \\frac{AD}{AB} = \\frac{BC}{ED}\\)",
+      "\\(\\frac{AE}{AB} = \\frac{AD}{AC} = \\frac{BC}{ED}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Teorema asemănării: \\(\\frac{AE}{AC} = \\frac{AD}{AB} = \\frac{ED}{BC}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q01",
+    "lessonId": "linia-mijlocie",
+    "question": "Linia mijlocie într-un triunghi este segmentul care unește:",
+    "options": [
+      "mijloacele a două laturi",
+      "un vârf cu mijlocul laturii opuse",
+      "două vârfuri",
+      "un vârf cu centrul de greutate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Linia mijlocie în triunghi este segmentul care unește mijloacele a două laturi.",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q02",
+    "lessonId": "linia-mijlocie",
+    "question": "Dacă MN este linie mijlocie în △ABC (M pe AB, N pe AC), atunci:",
+    "options": [
+      "MN ⊥ BC",
+      "MN ∥ BC",
+      "MN = BC",
+      "MN ∥ AB"
+    ],
+    "correctIndex": 1,
+    "explanation": "Proprietate: MN ∥ BC.",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q03",
+    "lessonId": "linia-mijlocie",
+    "question": "MN este linie mijlocie în △ABC, paralelă cu BC, iar BC = 14 cm. Cât este MN?",
+    "options": [
+      "7 cm",
+      "14 cm",
+      "21 cm",
+      "28 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(MN = \\frac{BC}{2} = 7\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q04",
+    "lessonId": "linia-mijlocie",
+    "question": "Câte linii mijlocii poate avea cel mult un triunghi?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un triunghi poate avea maxim 3 linii mijlocii: MN, NP și MP.",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q05",
+    "lessonId": "linia-mijlocie",
+    "question": "MN, NP și MP sunt liniile mijlocii ale △ABC. Raportul perimetrelor P△MNP / P△ABC este:",
+    "options": [
+      "\\(\\frac{1}{2}\\)",
+      "\\(\\frac{1}{3}\\)",
+      "\\(\\frac{1}{4}\\)",
+      "\\(2\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(\\frac{\\mathcal{P}_{\\triangle MNP}}{\\mathcal{P}_{\\triangle ABC}} = \\frac{1}{2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q06",
+    "lessonId": "linia-mijlocie",
+    "question": "MN, NP și MP sunt liniile mijlocii ale △ABC, iar aria △ABC este 40 cm². Cât este aria △MNP?",
+    "options": [
+      "10 cm²",
+      "13,3 cm²",
+      "20 cm²",
+      "80 cm²"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(\\frac{\\mathcal{A}_{\\triangle MNP}}{\\mathcal{A}_{\\triangle ABC}} = \\frac{1}{4}\\), deci aria este 40 : 4 = 10 cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q07",
+    "lessonId": "linia-mijlocie",
+    "question": "Linia mijlocie a unui trapez este segmentul care unește:",
+    "options": [
+      "mijloacele bazelor",
+      "mijloacele laturilor neparalele",
+      "două vârfuri opuse",
+      "mijloacele diagonalelor"
+    ],
+    "correctIndex": 1,
+    "explanation": "Linia mijlocie în trapez unește mijloacele laturilor neparalele.",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q08",
+    "lessonId": "linia-mijlocie",
+    "question": "Trapezul ABCD are bazele AB = 6 cm și DC = 10 cm. Cât este linia mijlocie MN?",
+    "options": [
+      "4 cm",
+      "8 cm",
+      "16 cm",
+      "2 cm"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(MN = \\frac{AB + DC}{2} = \\frac{6 + 10}{2} = 8\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q09",
+    "lessonId": "linia-mijlocie",
+    "question": "Trapezul ABCD are bazele AB = 6 cm și DC = 10 cm. Diagonalele determină pe linia mijlocie segmentul PQ. Cât este PQ?",
+    "options": [
+      "2 cm",
+      "4 cm",
+      "8 cm",
+      "16 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(PQ = \\frac{DC - AB}{2} = \\frac{10 - 6}{2} = 2\\) cm.",
+    "sourcePage": 1
+  },
+  {
+    "id": "linia-mijlocie-q10",
+    "lessonId": "linia-mijlocie",
+    "question": "În trapezul ABCD cu bazele AB și DC, linia mijlocie MN este:",
+    "options": [
+      "perpendiculară pe baze",
+      "paralelă cu bazele: MN ∥ AB ∥ DC",
+      "egală cu suma bazelor",
+      "paralelă cu laturile neparalele"
+    ],
+    "correctIndex": 1,
+    "explanation": "Proprietate: MN ∥ AB ∥ DC.",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q01",
+    "lessonId": "aria-triunghiului",
+    "question": "Aria unui triunghi oarecare, cu baza b și înălțimea corespunzătoare h, este:",
+    "options": [
+      "\\(b \\cdot h\\)",
+      "\\(\\frac{b \\cdot h}{2}\\)",
+      "\\(\\frac{b + h}{2}\\)",
+      "\\(2 \\cdot b \\cdot h\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{b \\cdot h}{2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q02",
+    "lessonId": "aria-triunghiului",
+    "question": "Un triunghi are o bază de 10 cm, iar înălțimea corespunzătoare are 6 cm. Aria este:",
+    "options": [
+      "16 cm²",
+      "30 cm²",
+      "60 cm²",
+      "120 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{10 \\cdot 6}{2} = 30\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q03",
+    "lessonId": "aria-triunghiului",
+    "question": "În triunghiul ABC, AD ⊥ BC și CE ⊥ AB. Care egalitate este adevărată?",
+    "options": [
+      "\\(\\frac{BC \\cdot AD}{2} = \\frac{AB \\cdot CE}{2}\\)",
+      "\\(BC \\cdot CE = AB \\cdot AD\\)",
+      "\\(\\frac{BC \\cdot AB}{2} = \\frac{AD \\cdot CE}{2}\\)",
+      "\\(BC + AD = AB + CE\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aceeași arie poate fi scrisă folosind orice latură și înălțimea dusă pe acea latură.",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q04",
+    "lessonId": "aria-triunghiului",
+    "question": "Aria unui triunghi cu două laturi l₁, l₂ și unghiul α cuprins între ele este:",
+    "options": [
+      "\\(l_1 \\cdot l_2 \\cdot \\sin\\alpha\\)",
+      "\\(\\frac{l_1 \\cdot l_2 \\cdot \\sin\\alpha}{2}\\)",
+      "\\(\\frac{l_1 + l_2}{2} \\cdot \\sin\\alpha\\)",
+      "\\(\\frac{l_1 \\cdot l_2}{2 \\sin\\alpha}\\)"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{l_1 \\cdot l_2 \\cdot \\sin\\alpha}{2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q05",
+    "lessonId": "aria-triunghiului",
+    "question": "Aria triunghiului ABC în funcție de AB, BC și unghiul B este:",
+    "options": [
+      "\\(\\frac{AB \\cdot BC \\cdot \\sin B}{2}\\)",
+      "\\(\\frac{AB \\cdot BC \\cdot \\sin A}{2}\\)",
+      "\\(\\frac{AB \\cdot AC \\cdot \\sin B}{2}\\)",
+      "\\(AB \\cdot BC \\cdot \\sin C\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Unghiul B este cuprins între laturile AB și BC.",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q06",
+    "lessonId": "aria-triunghiului",
+    "question": "În formula ariei cu sinus, α este:",
+    "options": [
+      "unghiul cuprins între cele două laturi",
+      "un unghi opus uneia dintre laturi",
+      "întotdeauna un unghi drept",
+      "unghiul exterior triunghiului"
+    ],
+    "correctIndex": 0,
+    "explanation": "Formula folosește două laturi cunoscute și unghiul cuprins între ele.",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q07",
+    "lessonId": "aria-triunghiului",
+    "question": "Aria unui triunghi echilateral cu latura l este:",
+    "options": [
+      "\\(\\frac{l^2\\sqrt{3}}{4}\\)",
+      "\\(\\frac{l\\sqrt{3}}{2}\\)",
+      "\\(\\frac{l^2}{2}\\)",
+      "\\(l^2\\sqrt{3}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(\\mathcal{A} = \\frac{l^2\\sqrt{3}}{4}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q08",
+    "lessonId": "aria-triunghiului",
+    "question": "Înălțimea unui triunghi echilateral cu latura l este:",
+    "options": [
+      "\\(\\frac{l\\sqrt{3}}{2}\\)",
+      "\\(\\frac{l^2\\sqrt{3}}{4}\\)",
+      "\\(\\frac{l}{2}\\)",
+      "\\(l\\sqrt{2}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(h = \\frac{l\\sqrt{3}}{2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q09",
+    "lessonId": "aria-triunghiului",
+    "question": "Catetele unui triunghi dreptunghic au 5 cm și 12 cm. Aria este:",
+    "options": [
+      "17 cm²",
+      "30 cm²",
+      "60 cm²",
+      "120 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{c_1 \\cdot c_2}{2} = \\frac{5 \\cdot 12}{2} = 30\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "aria-triunghiului-q10",
+    "lessonId": "aria-triunghiului",
+    "question": "În triunghiul obtuzunghic, o înălțime poate:",
+    "options": [
+      "cădea pe prelungirea unei laturi, în exteriorul triunghiului",
+      "fi mai lungă decât orice latură, mereu",
+      "să nu fie perpendiculară pe bază",
+      "coincide întotdeauna cu o mediană"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fișa: când înălțimea cade pe prelungirea unei laturi, alegem baza și înălțimea care formează un unghi drept, chiar dacă înălțimea este în exteriorul triunghiului.",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q01",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Aria unui pătrat cu latura de 7 cm este:",
+    "options": [
+      "14 cm²",
+      "28 cm²",
+      "49 cm²",
+      "70 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\mathcal{A} = l^2 = 7^2 = 49\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q02",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Aria unui dreptunghi cu lungimea de 8 cm și lățimea de 5 cm este:",
+    "options": [
+      "13 cm²",
+      "26 cm²",
+      "40 cm²",
+      "80 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\mathcal{A} = L \\cdot l = 8 \\cdot 5 = 40\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q03",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Un paralelogram are baza de 9 cm și înălțimea de 4 cm. Aria este:",
+    "options": [
+      "13 cm²",
+      "18 cm²",
+      "36 cm²",
+      "72 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\mathcal{A} = b \\cdot h = 9 \\cdot 4 = 36\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q04",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Aria paralelogramului cu laturile l₁, l₂ și unghiul cuprins α este:",
+    "options": [
+      "\\(l_1 \\cdot l_2 \\cdot \\sin\\alpha\\)",
+      "\\(\\frac{l_1 \\cdot l_2 \\cdot \\sin\\alpha}{2}\\)",
+      "\\(l_1 + l_2\\)",
+      "\\(l_1^2 \\cdot \\sin\\alpha\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(\\mathcal{A} = l_1 \\cdot l_2 \\cdot \\sin\\alpha\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q05",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Un romb are diagonalele de 6 cm și 8 cm. Aria este:",
+    "options": [
+      "14 cm²",
+      "24 cm²",
+      "48 cm²",
+      "96 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{d_1 \\cdot d_2}{2} = \\frac{6 \\cdot 8}{2} = 24\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q06",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Un romb are latura de 5 cm și înălțimea de 4 cm. Aria este:",
+    "options": [
+      "9 cm²",
+      "10 cm²",
+      "20 cm²",
+      "25 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\mathcal{A} = l \\cdot h = 5 \\cdot 4 = 20\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q07",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Care dintre formulele de mai jos este dată în fișă pentru aria rombului cu latura l și unghiul α?",
+    "options": [
+      "\\(l^2 \\cdot \\sin\\alpha\\)",
+      "\\(\\frac{l^2 \\cdot \\sin\\alpha}{2}\\)",
+      "\\(4l\\)",
+      "\\(l \\cdot \\sin\\alpha\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pentru romb: \\(\\mathcal{A} = l^2 \\cdot \\sin\\alpha\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q08",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Un trapez are baza mare de 10 cm, baza mică de 6 cm și înălțimea de 4 cm. Aria este:",
+    "options": [
+      "20 cm²",
+      "32 cm²",
+      "64 cm²",
+      "240 cm²"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(\\mathcal{A} = \\frac{(B + b) \\cdot h}{2} = \\frac{16 \\cdot 4}{2} = 32\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q09",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "Un trapez are linia mijlocie de 7 cm și înălțimea de 3 cm. Aria este:",
+    "options": [
+      "10 cm²",
+      "10,5 cm²",
+      "21 cm²",
+      "42 cm²"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(\\mathcal{A} = m \\cdot h = 7 \\cdot 3 = 21\\) cm².",
+    "sourcePage": 1
+  },
+  {
+    "id": "ariile-patrulaterelor-q10",
+    "lessonId": "ariile-patrulaterelor",
+    "question": "În formula \\(\\mathcal{A} = \\frac{(B + b) \\cdot h}{2}\\) a trapezului, B reprezintă:",
+    "options": [
+      "baza mare",
+      "baza mică",
+      "linia mijlocie",
+      "diagonala"
+    ],
+    "correctIndex": 0,
+    "explanation": "În fișă: B = baza mare, b = baza mică, h = înălțimea.",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q01",
+    "lessonId": "geometrie-analitica",
+    "question": "Distanța dintre punctele A(x_A, y_A) și B(x_B, y_B) este:",
+    "options": [
+      "\\(\\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}\\)",
+      "\\((x_B - x_A) + (y_B - y_A)\\)",
+      "\\(\\sqrt{(x_B + x_A)^2 + (y_B + y_A)^2}\\)",
+      "\\(\\frac{x_A + x_B}{2}\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q02",
+    "lessonId": "geometrie-analitica",
+    "question": "Distanța dintre A(1, 2) și B(4, 6) este:",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ],
+    "correctIndex": 2,
+    "explanation": "\\(AB = \\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{25} = 5\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q03",
+    "lessonId": "geometrie-analitica",
+    "question": "Distanța dintre A(1, 1) și B(7, 9) este:",
+    "options": [
+      "8",
+      "10",
+      "14",
+      "100"
+    ],
+    "correctIndex": 1,
+    "explanation": "\\(AB = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q04",
+    "lessonId": "geometrie-analitica",
+    "question": "Abscisa mijlocului M al segmentului [AB] este:",
+    "options": [
+      "\\(x_M = \\frac{x_A + x_B}{2}\\)",
+      "\\(x_M = x_B - x_A\\)",
+      "\\(x_M = \\frac{x_B - x_A}{2}\\)",
+      "\\(x_M = x_A \\cdot x_B\\)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Coordonatele mijlocului sunt media coordonatelor extremităților.",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q05",
+    "lessonId": "geometrie-analitica",
+    "question": "Mijlocul segmentului [AB], cu A(2, 4) și B(6, 8), este:",
+    "options": [
+      "M(4, 6)",
+      "M(8, 12)",
+      "M(2, 2)",
+      "M(3, 4)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(x_M = \\frac{2+6}{2} = 4\\), \\(y_M = \\frac{4+8}{2} = 6\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q06",
+    "lessonId": "geometrie-analitica",
+    "question": "Mijlocul segmentului [AB], cu A(−2, 3) și B(4, −1), este:",
+    "options": [
+      "M(1, 1)",
+      "M(2, 2)",
+      "M(3, −2)",
+      "M(1, 2)"
+    ],
+    "correctIndex": 0,
+    "explanation": "\\(x_M = \\frac{-2+4}{2} = 1\\), \\(y_M = \\frac{3+(-1)}{2} = 1\\).",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q07",
+    "lessonId": "geometrie-analitica",
+    "question": "Trei puncte A, B, C sunt coliniare dacă:",
+    "options": [
+      "distanța cea mai mare este suma celorlalte două",
+      "toate distanțele sunt egale",
+      "AB · BC = AC",
+      "AB² + BC² = AC²"
+    ],
+    "correctIndex": 0,
+    "explanation": "Punctele sunt coliniare dacă distanța cea mai mare este suma celorlalte două (de exemplu AB + BC = AC).",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q08",
+    "lessonId": "geometrie-analitica",
+    "question": "Pentru A, B, C avem AB = 2, BC = 3 și AC = 5. Ce putem spune despre puncte?",
+    "options": [
+      "sunt coliniare",
+      "formează un triunghi isoscel",
+      "formează un triunghi dreptunghic",
+      "formează un triunghi echilateral"
+    ],
+    "correctIndex": 0,
+    "explanation": "Distanța cea mai mare, AC = 5, este suma celorlalte două: 2 + 3 = 5, deci punctele sunt coliniare.",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q09",
+    "lessonId": "geometrie-analitica",
+    "question": "Cum arătăm, cu ajutorul coordonatelor, că un triunghi este isoscel?",
+    "options": [
+      "Calculăm lungimile celor trei laturi și verificăm că două sunt egale.",
+      "Calculăm mijlocul unei laturi.",
+      "Verificăm că AB + BC = AC.",
+      "Verificăm că toate coordonatele sunt pozitive."
+    ],
+    "correctIndex": 0,
+    "explanation": "Calculez lungimile celor trei laturi; dacă două laturi sunt egale, triunghiul este isoscel.",
+    "sourcePage": 1
+  },
+  {
+    "id": "geometrie-analitica-q10",
+    "lessonId": "geometrie-analitica",
+    "question": "Un triunghi are laturile de 6, 8 și 10. Conform metodei din fișă, triunghiul este:",
+    "options": [
+      "dreptunghic",
+      "echilateral",
+      "isoscel",
+      "degenerat (punctele sunt coliniare)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Latura cea mai mare este c = 10 și 10² = 6² + 8² (100 = 36 + 64), deci triunghiul este dreptunghic.",
+    "sourcePage": 1
+  }
+]

@@ -3,130 +3,268 @@
     "id": "unghiuri",
     "order": 1,
     "title": "Unghiuri",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Definiția și notația unghiului, măsurarea în grade, minute și secunde, tipurile de unghiuri, unghiuri complementare, suplementare, adiacente, bisectoarea, unghiuri opuse la vârf și drepte paralele tăiate de o secantă.",
     "pdf": "pdf/unghiuri.pdf",
     "keywords": [
-      "unghiuri"
+      "unghi",
+      "grad",
+      "minut",
+      "secundă",
+      "raportor",
+      "unghi ascuțit",
+      "unghi drept",
+      "unghi obtuz",
+      "unghi alungit",
+      "unghi nul",
+      "complementare",
+      "suplementare",
+      "adiacente",
+      "bisectoare",
+      "opuse la vârf",
+      "secantă",
+      "paralele",
+      "corespondente",
+      "alterne interne"
     ]
   },
   {
     "id": "triunghiuri",
     "order": 2,
     "title": "Triunghiuri",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Elementele triunghiului, perimetrul, suma unghiurilor, clasificarea după laturi (scalen, isoscel, echilateral) și după unghiuri (ascuțitunghic, dreptunghic, obtuzunghic).",
     "pdf": "pdf/triunghiuri.pdf",
     "keywords": [
-      "triunghiuri"
+      "triunghi",
+      "laturi",
+      "perimetru",
+      "suma unghiurilor",
+      "180°",
+      "scalen",
+      "oarecare",
+      "isoscel",
+      "echilateral",
+      "ascuțitunghic",
+      "dreptunghic",
+      "obtuzunghic",
+      "catete",
+      "ipotenuză"
     ]
   },
   {
     "id": "cercul",
     "order": 3,
     "title": "Cercul",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Elementele cercului (rază, diametru, coardă, arc), lungimea cercului și aria discului, unghiul la centru și unghiul înscris, triunghiul înscris în cerc și tangenta la cerc.",
     "pdf": "pdf/cercul.pdf",
     "keywords": [
-      "cercul"
+      "cerc",
+      "centru",
+      "rază",
+      "diametru",
+      "coardă",
+      "arc",
+      "lungimea cercului",
+      "aria discului",
+      "disc",
+      "pi",
+      "unghi la centru",
+      "unghi înscris",
+      "triunghi înscris",
+      "tangentă",
+      "punct de tangență"
     ]
   },
   {
     "id": "triunghiuri-dreptunghice-1",
     "order": 4,
     "title": "Triunghiuri dreptunghice — Partea 1",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Catete și ipotenuză, teorema lui Pitagora, teorema medianei în triunghiul dreptunghic și teorema unghiului de 30°.",
     "pdf": "pdf/triunghiuri-dreptunghice-1.pdf",
     "keywords": [
-      "triunghiuri dreptunghice — partea 1"
+      "triunghi dreptunghic",
+      "catete",
+      "ipotenuză",
+      "Pitagora",
+      "teorema lui Pitagora",
+      "mediană",
+      "teorema medianei",
+      "unghi de 30°",
+      "teorema unghiului de 30°"
     ]
   },
   {
     "id": "triunghiuri-dreptunghice-2",
     "order": 5,
     "title": "Triunghiuri dreptunghice — Partea 2",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Proiecții pe ipotenuză, teorema înălțimii, teorema catetei, formula înălțimii și aria triunghiului dreptunghic.",
     "pdf": "pdf/triunghiuri-dreptunghice-2.pdf",
     "keywords": [
-      "triunghiuri dreptunghice — partea 2"
+      "triunghi dreptunghic",
+      "proiecție",
+      "înălțime",
+      "teorema înălțimii",
+      "teorema catetei",
+      "formula înălțimii",
+      "aria triunghiului dreptunghic",
+      "catete",
+      "ipotenuză"
     ]
   },
   {
     "id": "triunghiuri-dreptunghice-3",
     "order": 6,
     "title": "Triunghiuri dreptunghice — Partea 3",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Funcțiile trigonometrice sinus, cosinus, tangentă și cotangentă în triunghiul dreptunghic, relația sin² x + cos² x = 1 și valorile uzuale pentru 30°, 45° și 60°.",
     "pdf": "pdf/triunghiuri-dreptunghice-3.pdf",
     "keywords": [
-      "triunghiuri dreptunghice — partea 3"
+      "trigonometrie",
+      "funcții trigonometrice",
+      "sinus",
+      "sin",
+      "cosinus",
+      "cos",
+      "tangentă",
+      "tg",
+      "cotangentă",
+      "ctg",
+      "cateta opusă",
+      "cateta alăturată",
+      "30°",
+      "45°",
+      "60°"
     ]
   },
   {
     "id": "centrul-de-greutate",
     "order": 7,
     "title": "Centrul de greutate",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Mediana unui triunghi, centrul de greutate G și împărțirea medianei în raport 2 : 1, precum și relațiile dintre mediane, centrul de greutate și arii.",
     "pdf": "pdf/centrul-de-greutate.pdf",
     "keywords": [
-      "centrul de greutate"
+      "mediană",
+      "mijlocul laturii",
+      "centrul de greutate",
+      "G",
+      "raport 2:1",
+      "arii egale",
+      "triunghi"
     ]
   },
   {
     "id": "triunghiuri-asemenea",
     "order": 8,
     "title": "Triunghiuri asemenea",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Noțiunea de triunghiuri asemenea, notația și corespondența vârfurilor, raportul de asemănare, raportul perimetrelor și al ariilor, în cele patru configurații prezentate în fișă.",
     "pdf": "pdf/triunghiuri-asemenea.pdf",
     "keywords": [
-      "triunghiuri asemenea"
+      "asemănare",
+      "triunghiuri asemenea",
+      "raport de asemănare",
+      "k",
+      "laturi proporționale",
+      "unghiuri egale",
+      "raportul perimetrelor",
+      "raportul ariilor",
+      "paralelă",
+      "cazuri de asemănare"
     ]
   },
   {
     "id": "thales-asemanare",
     "order": 9,
     "title": "Teorema lui Thales și asemănarea",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Teorema lui Thales în triunghi și în configurația cu două drepte secante, diferența dintre Thales și asemănare și teorema asemănării pentru o paralelă la o latură.",
     "pdf": "pdf/thales-asemanare.pdf",
     "keywords": [
-      "teorema lui thales și asemănarea"
+      "Thales",
+      "teorema lui Thales",
+      "segmente proporționale",
+      "paralelă",
+      "asemănare",
+      "teorema asemănării",
+      "secante",
+      "proporționalitate"
     ]
   },
   {
     "id": "linia-mijlocie",
     "order": 10,
     "title": "Linia mijlocie în triunghi și trapez",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Linia mijlocie în triunghi și proprietățile ei, cele trei linii mijlocii ale unui triunghi, linia mijlocie în trapez și segmentul determinat de diagonale pe linia mijlocie.",
     "pdf": "pdf/linia-mijlocie.pdf",
     "keywords": [
-      "linia mijlocie în triunghi și trapez"
+      "linie mijlocie",
+      "linia mijlocie",
+      "mijloc",
+      "triunghi",
+      "trapez",
+      "baza mare",
+      "baza mică",
+      "diagonale",
+      "paralelă",
+      "perimetru",
+      "arie"
     ]
   },
   {
     "id": "aria-triunghiului",
     "order": 11,
     "title": "Formule pentru aria triunghiului",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Aria triunghiului cu bază și înălțime, aria cu sinusul unghiului cuprins, cazurile triunghiului dreptunghic și echilateral și înălțimile exterioare în triunghiul obtuzunghic.",
     "pdf": "pdf/aria-triunghiului.pdf",
     "keywords": [
-      "formule pentru aria triunghiului"
+      "arie",
+      "aria triunghiului",
+      "bază",
+      "înălțime",
+      "sinus",
+      "sin",
+      "triunghi dreptunghic",
+      "triunghi echilateral",
+      "triunghi obtuzunghic",
+      "înălțime exterioară"
     ]
   },
   {
     "id": "ariile-patrulaterelor",
     "order": 12,
     "title": "Formule pentru ariile patrulaterelor",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Formulele de arie pentru pătrat, dreptunghi, paralelogram, romb și trapez, inclusiv variantele cu înălțime, diagonale, sinus și linie mijlocie.",
     "pdf": "pdf/ariile-patrulaterelor.pdf",
     "keywords": [
-      "formule pentru ariile patrulaterelor"
+      "arie",
+      "patrulater",
+      "pătrat",
+      "dreptunghi",
+      "paralelogram",
+      "romb",
+      "trapez",
+      "aria trapezului",
+      "aria rombului",
+      "diagonale",
+      "înălțime",
+      "linie mijlocie",
+      "sinus",
+      "baza mare",
+      "baza mică"
     ]
   },
   {
     "id": "geometrie-analitica",
     "order": 13,
     "title": "Geometrie analitică",
-    "description": "DE COMPLETAT DIN PDF",
+    "description": "Distanța dintre două puncte, coordonatele mijlocului unui segment, verificarea coliniarității a trei puncte și cum arătăm că un triunghi este isoscel sau dreptunghic folosind coordonate.",
     "pdf": "pdf/geometrie-analitica.pdf",
     "keywords": [
-      "geometrie analitică"
+      "geometrie analitică",
+      "coordonate",
+      "distanța dintre două puncte",
+      "mijlocul segmentului",
+      "coliniare",
+      "coliniaritate",
+      "isoscel",
+      "dreptunghic",
+      "reper"
     ]
   }
 ]

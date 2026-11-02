@@ -1,1 +1,939 @@
-[]
+[
+  {
+    "id": "unghiuri-f01",
+    "lessonId": "unghiuri",
+    "name": "Transformarea gradelor în minute și secunde",
+    "latex": [
+      "1^\\circ = 60'",
+      "1' = 60''",
+      "1^\\circ = 3600''"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "grad",
+      "minut",
+      "secundă"
+    ]
+  },
+  {
+    "id": "unghiuri-f02",
+    "lessonId": "unghiuri",
+    "name": "Complementul unui unghi",
+    "latex": "\\text{complementul lui } x = 90^\\circ - x",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "complementare"
+    ]
+  },
+  {
+    "id": "unghiuri-f03",
+    "lessonId": "unghiuri",
+    "name": "Suplementul unui unghi",
+    "latex": "\\text{suplementul lui } x = 180^\\circ - x",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "suplementare"
+    ]
+  },
+  {
+    "id": "unghiuri-f04",
+    "lessonId": "unghiuri",
+    "name": "Unghiuri adiacente",
+    "latex": "m(\\angle AOB) + m(\\angle BOC) = m(\\angle AOC)",
+    "conditions": "Dacă raza OB este în interiorul lui ∠AOC.",
+    "variables": [],
+    "sourcePage": 2,
+    "keywords": [
+      "adiacente"
+    ]
+  },
+  {
+    "id": "unghiuri-f05",
+    "lessonId": "unghiuri",
+    "name": "Bisectoarea unui unghi",
+    "latex": [
+      "m(\\angle MOP) = m(\\angle PON)",
+      "m(\\angle MON) = 2 \\cdot m(\\angle MOP)"
+    ],
+    "conditions": "Dacă OP este bisectoarea lui ∠MON.",
+    "variables": [],
+    "sourcePage": 2,
+    "keywords": [
+      "bisectoare"
+    ]
+  },
+  {
+    "id": "unghiuri-f06",
+    "lessonId": "unghiuri",
+    "name": "Unghiuri opuse la vârf",
+    "latex": "m(\\angle 1) = m(\\angle 3), \\quad m(\\angle 2) = m(\\angle 4)",
+    "variables": [],
+    "sourcePage": 2,
+    "keywords": [
+      "opuse la vârf"
+    ]
+  },
+  {
+    "id": "triunghiuri-f01",
+    "lessonId": "triunghiuri",
+    "name": "Suma unghiurilor unui triunghi",
+    "latex": "\\angle A + \\angle B + \\angle C = 180^\\circ",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "suma unghiurilor"
+    ]
+  },
+  {
+    "id": "triunghiuri-f02",
+    "lessonId": "triunghiuri",
+    "name": "Triunghiul echilateral",
+    "latex": [
+      "AB = BC = CA",
+      "\\angle A = \\angle B = \\angle C = 60^\\circ"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "echilateral"
+    ]
+  },
+  {
+    "id": "triunghiuri-f03",
+    "lessonId": "triunghiuri",
+    "name": "Triunghiul isoscel",
+    "latex": [
+      "AB = AC",
+      "\\angle B = \\angle C"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "isoscel",
+      "unghiurile de la bază"
+    ]
+  },
+  {
+    "id": "cercul-f01",
+    "lessonId": "cercul",
+    "name": "Diametrul",
+    "latex": "d = 2R",
+    "variables": [
+      {
+        "symbol": "d",
+        "meaning": "diametrul"
+      },
+      {
+        "symbol": "R",
+        "meaning": "raza"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "diametru",
+      "rază"
+    ]
+  },
+  {
+    "id": "cercul-f02",
+    "lessonId": "cercul",
+    "name": "Lungimea cercului",
+    "latex": "L = 2\\pi R = \\pi d",
+    "variables": [
+      {
+        "symbol": "L",
+        "meaning": "lungimea cercului"
+      },
+      {
+        "symbol": "R",
+        "meaning": "raza"
+      },
+      {
+        "symbol": "d",
+        "meaning": "diametrul"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "lungimea cercului",
+      "circumferință"
+    ]
+  },
+  {
+    "id": "cercul-f03",
+    "lessonId": "cercul",
+    "name": "Aria discului",
+    "latex": "\\mathcal{A}_{\\text{disc}} = \\pi R^2",
+    "variables": [
+      {
+        "symbol": "R",
+        "meaning": "raza"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "aria discului",
+      "disc"
+    ]
+  },
+  {
+    "id": "cercul-f04",
+    "lessonId": "cercul",
+    "name": "Unghiul la centru",
+    "latex": "m(\\overset{\\frown}{AB}) = m(\\angle AOB)",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "unghi la centru",
+      "arc"
+    ]
+  },
+  {
+    "id": "cercul-f05",
+    "lessonId": "cercul",
+    "name": "Unghiul înscris",
+    "latex": "m(\\overset{\\frown}{AB}) = 2 \\cdot m(\\angle APB)",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "unghi înscris",
+      "arc"
+    ]
+  },
+  {
+    "id": "cercul-f06",
+    "lessonId": "cercul",
+    "name": "Suma arcelor unui cerc",
+    "latex": "m(\\overset{\\frown}{AB}) + m(\\overset{\\frown}{BC}) + m(\\overset{\\frown}{CA}) = 360^\\circ",
+    "conditions": "Pentru △ABC înscris în cerc.",
+    "variables": [],
+    "sourcePage": 2,
+    "keywords": [
+      "arce",
+      "triunghi înscris"
+    ]
+  },
+  {
+    "id": "cercul-f07",
+    "lessonId": "cercul",
+    "name": "Tangentele duse dintr-un punct exterior",
+    "latex": "BA = BC",
+    "conditions": "Dacă BA și BC sunt tangente la cerc în A și C.",
+    "variables": [],
+    "sourcePage": 2,
+    "keywords": [
+      "tangentă"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-f01",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "name": "Teorema lui Pitagora",
+    "latex": [
+      "BC^2 = AB^2 + AC^2",
+      "ip^2 = c_1^2 + c_2^2"
+    ],
+    "conditions": "În triunghiul ABC cu ∠A = 90°.",
+    "variables": [
+      {
+        "symbol": "ip",
+        "meaning": "ipotenuza"
+      },
+      {
+        "symbol": "c_1, c_2",
+        "meaning": "catetele"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "Pitagora",
+      "ipotenuză",
+      "catete"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-f02",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "name": "Teorema medianei",
+    "latex": "AM = \\frac{ip}{2} = \\frac{BC}{2}",
+    "conditions": "Mediana dusă din unghiul drept.",
+    "variables": [
+      {
+        "symbol": "M",
+        "meaning": "mijlocul ipotenuzei BC"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "mediană",
+      "teorema medianei"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1-f03",
+    "lessonId": "triunghiuri-dreptunghice-1",
+    "name": "Teorema unghiului de 30°",
+    "latex": "AB = \\frac{BC}{2}",
+    "conditions": "Dacă ∠C = 30° (cateta opusă unghiului de 30° este jumătate din ipotenuză).",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "unghi de 30°"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-f01",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "name": "Teorema înălțimii",
+    "latex": [
+      "AD^2 = BD \\cdot DC",
+      "h^2 = p_1 \\cdot p_2"
+    ],
+    "conditions": "În △ABC cu ∠A = 90° și AD ⊥ BC.",
+    "variables": [
+      {
+        "symbol": "h",
+        "meaning": "înălțimea AD"
+      },
+      {
+        "symbol": "p_1, p_2",
+        "meaning": "proiecțiile catetelor pe ipotenuză"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "înălțime",
+      "teorema înălțimii",
+      "proiecții"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-f02",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "name": "Teorema catetei",
+    "latex": [
+      "AC^2 = CD \\cdot BC",
+      "AB^2 = BD \\cdot BC"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "teorema catetei",
+      "proiecții"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-f03",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "name": "Formula înălțimii",
+    "latex": "h = \\frac{c_1 \\cdot c_2}{ip} = \\frac{AB \\cdot AC}{BC}",
+    "variables": [
+      {
+        "symbol": "h",
+        "meaning": "înălțimea pe ipotenuză"
+      },
+      {
+        "symbol": "c_1, c_2",
+        "meaning": "catetele"
+      },
+      {
+        "symbol": "ip",
+        "meaning": "ipotenuza"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "înălțime"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2-f04",
+    "lessonId": "triunghiuri-dreptunghice-2",
+    "name": "Aria triunghiului dreptunghic",
+    "latex": "\\mathcal{A} = \\frac{c_1 \\cdot c_2}{2} = \\frac{ip \\cdot h}{2}",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "arie",
+      "triunghi dreptunghic"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f01",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Sinusul",
+    "latex": [
+      "\\sin x = \\frac{\\text{cateta opusă}}{\\text{ipotenuză}}",
+      "\\sin C = \\frac{AB}{BC}"
+    ],
+    "conditions": "△ABC dreptunghic în A, x ∈ (0°, 90°).",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "sinus",
+      "sin",
+      "trigonometrie"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f02",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Cosinusul",
+    "latex": [
+      "\\cos x = \\frac{\\text{cateta alăturată}}{\\text{ipotenuză}}",
+      "\\cos C = \\frac{AC}{BC}"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "cosinus",
+      "cos",
+      "trigonometrie"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f03",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Tangenta",
+    "latex": [
+      "\\operatorname{tg} x = \\frac{\\text{cateta opusă}}{\\text{cateta alăturată}}",
+      "\\operatorname{tg} C = \\frac{AB}{AC}"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "tangentă",
+      "tg",
+      "trigonometrie"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f04",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Cotangenta",
+    "latex": [
+      "\\operatorname{ctg} x = \\frac{\\text{cateta alăturată}}{\\text{cateta opusă}}",
+      "\\operatorname{ctg} C = \\frac{AC}{AB}"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "cotangentă",
+      "ctg",
+      "trigonometrie"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f05",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Formula fundamentală a trigonometriei",
+    "latex": "\\sin^2 x + \\cos^2 x = 1",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "sinus",
+      "cosinus"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f06",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Valori uzuale pentru 30°",
+    "latex": "\\sin 30^\\circ = \\tfrac{1}{2},\\ \\cos 30^\\circ = \\tfrac{\\sqrt{3}}{2},\\ \\operatorname{tg} 30^\\circ = \\tfrac{\\sqrt{3}}{3},\\ \\operatorname{ctg} 30^\\circ = \\sqrt{3}",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "valori",
+      "30°"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f07",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Valori uzuale pentru 45°",
+    "latex": "\\sin 45^\\circ = \\cos 45^\\circ = \\tfrac{\\sqrt{2}}{2},\\ \\operatorname{tg} 45^\\circ = \\operatorname{ctg} 45^\\circ = 1",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "valori",
+      "45°"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3-f08",
+    "lessonId": "triunghiuri-dreptunghice-3",
+    "name": "Valori uzuale pentru 60°",
+    "latex": "\\sin 60^\\circ = \\tfrac{\\sqrt{3}}{2},\\ \\cos 60^\\circ = \\tfrac{1}{2},\\ \\operatorname{tg} 60^\\circ = \\sqrt{3},\\ \\operatorname{ctg} 60^\\circ = \\tfrac{\\sqrt{3}}{3}",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "valori",
+      "60°"
+    ]
+  },
+  {
+    "id": "centrul-de-greutate-f01",
+    "lessonId": "centrul-de-greutate",
+    "name": "Poziția centrului de greutate pe mediană",
+    "latex": [
+      "AG = \\frac{2}{3} \\cdot AM",
+      "GM = \\frac{1}{3} \\cdot AM"
+    ],
+    "conditions": "Analog pe medianele CP și BN.",
+    "variables": [
+      {
+        "symbol": "G",
+        "meaning": "centrul de greutate"
+      },
+      {
+        "symbol": "AM",
+        "meaning": "mediana dusă din A"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "centrul de greutate",
+      "mediană",
+      "2:1"
+    ]
+  },
+  {
+    "id": "centrul-de-greutate-f02",
+    "lessonId": "centrul-de-greutate",
+    "name": "Mediana și ariile",
+    "latex": "\\mathcal{A}_{\\triangle ABM} = \\mathcal{A}_{\\triangle ACM}",
+    "conditions": "M este mijlocul lui BC.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "arii egale",
+      "mediană"
+    ]
+  },
+  {
+    "id": "centrul-de-greutate-f03",
+    "lessonId": "centrul-de-greutate",
+    "name": "Centrul de greutate și ariile",
+    "latex": "\\mathcal{A}_{\\triangle AGC} = \\mathcal{A}_{\\triangle CGB} = \\mathcal{A}_{\\triangle ABG}",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "arii egale",
+      "centrul de greutate"
+    ]
+  },
+  {
+    "id": "triunghiuri-asemenea-f01",
+    "lessonId": "triunghiuri-asemenea",
+    "name": "Laturi proporționale (raport de asemănare)",
+    "latex": "\\frac{AB}{DE} = \\frac{BC}{EF} = \\frac{AC}{DF} = k",
+    "conditions": "Pentru △ABC ∼ △DEF.",
+    "variables": [
+      {
+        "symbol": "k",
+        "meaning": "raportul de asemănare"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "raport de asemănare",
+      "proporționale"
+    ]
+  },
+  {
+    "id": "triunghiuri-asemenea-f02",
+    "lessonId": "triunghiuri-asemenea",
+    "name": "Raportul perimetrelor",
+    "latex": "\\frac{\\mathcal{P}_{\\triangle ABC}}{\\mathcal{P}_{\\triangle DEF}} = k",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "perimetre",
+      "raport de asemănare"
+    ]
+  },
+  {
+    "id": "triunghiuri-asemenea-f03",
+    "lessonId": "triunghiuri-asemenea",
+    "name": "Raportul ariilor",
+    "latex": "\\frac{\\mathcal{A}_{\\triangle ABC}}{\\mathcal{A}_{\\triangle DEF}} = k^2",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "arii",
+      "raport de asemănare",
+      "rapoarte de asemănare"
+    ]
+  },
+  {
+    "id": "thales-asemanare-f01",
+    "lessonId": "thales-asemanare",
+    "name": "Teorema lui Thales în triunghi",
+    "latex": [
+      "\\frac{AE}{EC} = \\frac{AD}{DB}",
+      "\\frac{EC}{AC} = \\frac{DB}{AB}"
+    ],
+    "conditions": "ED ∥ BC.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "Thales",
+      "proporționale"
+    ]
+  },
+  {
+    "id": "thales-asemanare-f02",
+    "lessonId": "thales-asemanare",
+    "name": "Teorema lui Thales — drepte secante",
+    "latex": [
+      "\\frac{AO}{OC} = \\frac{BO}{OD}",
+      "\\frac{AC}{AO} = \\frac{BD}{BO}"
+    ],
+    "conditions": "AB ∥ DC.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "Thales",
+      "secante"
+    ]
+  },
+  {
+    "id": "thales-asemanare-f03",
+    "lessonId": "thales-asemanare",
+    "name": "Teorema asemănării",
+    "latex": "\\frac{AE}{AC} = \\frac{AD}{AB} = \\frac{ED}{BC}",
+    "conditions": "Dacă DE ∥ BC, atunci △ADE ∼ △ABC.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "asemănare",
+      "rapoarte de asemănare"
+    ]
+  },
+  {
+    "id": "linia-mijlocie-f01",
+    "lessonId": "linia-mijlocie",
+    "name": "Linia mijlocie în triunghi",
+    "latex": "MN \\parallel BC, \\quad MN = \\frac{BC}{2}",
+    "conditions": "M, N sunt mijloacele laturilor AB și AC.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "linia mijlocie",
+      "triunghi"
+    ]
+  },
+  {
+    "id": "linia-mijlocie-f02",
+    "lessonId": "linia-mijlocie",
+    "name": "Triunghiul liniilor mijlocii",
+    "latex": [
+      "\\frac{\\mathcal{P}_{\\triangle MNP}}{\\mathcal{P}_{\\triangle ABC}} = \\frac{1}{2}",
+      "\\frac{\\mathcal{A}_{\\triangle MNP}}{\\mathcal{A}_{\\triangle ABC}} = \\frac{1}{4}"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "linii mijlocii",
+      "perimetru",
+      "arie"
+    ]
+  },
+  {
+    "id": "linia-mijlocie-f03",
+    "lessonId": "linia-mijlocie",
+    "name": "Linia mijlocie în trapez",
+    "latex": [
+      "MN \\parallel AB \\parallel DC",
+      "MN = \\frac{AB + DC}{2} = \\frac{B + b}{2}"
+    ],
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "linia mijlocie",
+      "trapez"
+    ]
+  },
+  {
+    "id": "linia-mijlocie-f04",
+    "lessonId": "linia-mijlocie",
+    "name": "Segmentul determinat de diagonale pe linia mijlocie",
+    "latex": "PQ = \\frac{DC - AB}{2} = \\frac{B - b}{2}",
+    "conditions": "PQ = MN ∩ AC ∩ BD (P, Q pe linia mijlocie).",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "diagonale",
+      "trapez"
+    ]
+  },
+  {
+    "id": "aria-triunghiului-f01",
+    "lessonId": "aria-triunghiului",
+    "name": "Aria cu bază și înălțime",
+    "latex": "\\mathcal{A} = \\frac{b \\cdot h}{2}",
+    "variables": [
+      {
+        "symbol": "b",
+        "meaning": "baza"
+      },
+      {
+        "symbol": "h",
+        "meaning": "înălțimea corespunzătoare bazei"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "arie",
+      "bază",
+      "înălțime",
+      "ariile triunghiurilor"
+    ]
+  },
+  {
+    "id": "aria-triunghiului-f02",
+    "lessonId": "aria-triunghiului",
+    "name": "Aria cu sinusul unghiului cuprins",
+    "latex": "\\mathcal{A} = \\frac{l_1 \\cdot l_2 \\cdot \\sin\\alpha}{2}",
+    "variables": [
+      {
+        "symbol": "l_1, l_2",
+        "meaning": "două laturi"
+      },
+      {
+        "symbol": "\\alpha",
+        "meaning": "unghiul cuprins între ele"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "sinus",
+      "arie"
+    ]
+  },
+  {
+    "id": "aria-triunghiului-f03",
+    "lessonId": "aria-triunghiului",
+    "name": "Aria triunghiului dreptunghic",
+    "latex": "\\mathcal{A} = \\frac{c_1 \\cdot c_2}{2} = \\frac{ip \\cdot h}{2}",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "triunghi dreptunghic",
+      "arie"
+    ]
+  },
+  {
+    "id": "aria-triunghiului-f04",
+    "lessonId": "aria-triunghiului",
+    "name": "Aria și înălțimea triunghiului echilateral",
+    "latex": [
+      "\\mathcal{A} = \\frac{l^2\\sqrt{3}}{4}",
+      "h = \\frac{l\\sqrt{3}}{2}"
+    ],
+    "variables": [
+      {
+        "symbol": "l",
+        "meaning": "latura"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "echilateral",
+      "arie",
+      "înălțime"
+    ]
+  },
+  {
+    "id": "ariile-patrulaterelor-f01",
+    "lessonId": "ariile-patrulaterelor",
+    "name": "Aria pătratului",
+    "latex": "\\mathcal{A} = l^2",
+    "variables": [
+      {
+        "symbol": "l",
+        "meaning": "latura"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "pătrat",
+      "ariile patrulaterelor"
+    ]
+  },
+  {
+    "id": "ariile-patrulaterelor-f02",
+    "lessonId": "ariile-patrulaterelor",
+    "name": "Aria dreptunghiului",
+    "latex": "\\mathcal{A} = L \\cdot l",
+    "variables": [
+      {
+        "symbol": "L",
+        "meaning": "lungimea"
+      },
+      {
+        "symbol": "l",
+        "meaning": "lățimea"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "dreptunghi"
+    ]
+  },
+  {
+    "id": "ariile-patrulaterelor-f03",
+    "lessonId": "ariile-patrulaterelor",
+    "name": "Aria paralelogramului",
+    "latex": [
+      "\\mathcal{A} = b \\cdot h",
+      "\\mathcal{A} = l_1 \\cdot l_2 \\cdot \\sin\\alpha"
+    ],
+    "variables": [
+      {
+        "symbol": "b",
+        "meaning": "baza"
+      },
+      {
+        "symbol": "h",
+        "meaning": "înălțimea"
+      },
+      {
+        "symbol": "l_1, l_2",
+        "meaning": "laturi"
+      },
+      {
+        "symbol": "\\alpha",
+        "meaning": "unghiul cuprins"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "paralelogram",
+      "sinus"
+    ]
+  },
+  {
+    "id": "ariile-patrulaterelor-f04",
+    "lessonId": "ariile-patrulaterelor",
+    "name": "Aria rombului",
+    "latex": [
+      "\\mathcal{A} = \\frac{d_1 \\cdot d_2}{2}",
+      "\\mathcal{A} = l \\cdot h",
+      "\\mathcal{A} = l^2 \\cdot \\sin\\alpha"
+    ],
+    "variables": [
+      {
+        "symbol": "d_1, d_2",
+        "meaning": "diagonalele"
+      },
+      {
+        "symbol": "l",
+        "meaning": "latura"
+      },
+      {
+        "symbol": "h",
+        "meaning": "înălțimea"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "romb",
+      "diagonale",
+      "aria rombului"
+    ]
+  },
+  {
+    "id": "ariile-patrulaterelor-f05",
+    "lessonId": "ariile-patrulaterelor",
+    "name": "Aria trapezului",
+    "latex": [
+      "\\mathcal{A} = \\frac{(B + b) \\cdot h}{2}",
+      "\\mathcal{A} = m \\cdot h"
+    ],
+    "variables": [
+      {
+        "symbol": "B",
+        "meaning": "baza mare"
+      },
+      {
+        "symbol": "b",
+        "meaning": "baza mică"
+      },
+      {
+        "symbol": "h",
+        "meaning": "înălțimea"
+      },
+      {
+        "symbol": "m",
+        "meaning": "linia mijlocie"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "trapez",
+      "aria trapezului",
+      "linia mijlocie"
+    ]
+  },
+  {
+    "id": "geometrie-analitica-f01",
+    "lessonId": "geometrie-analitica",
+    "name": "Distanța dintre două puncte",
+    "latex": "AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}",
+    "conditions": "Pentru A(x_A, y_A) și B(x_B, y_B).",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "distanța dintre două puncte",
+      "distanța",
+      "coordonate"
+    ]
+  },
+  {
+    "id": "geometrie-analitica-f02",
+    "lessonId": "geometrie-analitica",
+    "name": "Coordonatele mijlocului unui segment",
+    "latex": "x_M = \\frac{x_A + x_B}{2}, \\quad y_M = \\frac{y_A + y_B}{2}",
+    "conditions": "M(x_M, y_M) este mijlocul segmentului [AB].",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "mijlocul segmentului",
+      "mijloc",
+      "coordonate"
+    ]
+  },
+  {
+    "id": "geometrie-analitica-f03",
+    "lessonId": "geometrie-analitica",
+    "name": "Coliniaritatea a trei puncte",
+    "latex": "AB + BC = AC",
+    "conditions": "Distanța cea mai mare este suma celorlalte două.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": [
+      "coliniare"
+    ]
+  },
+  {
+    "id": "geometrie-analitica-f04",
+    "lessonId": "geometrie-analitica",
+    "name": "Verificarea triunghiului dreptunghic",
+    "latex": "c^2 = a^2 + b^2",
+    "variables": [
+      {
+        "symbol": "c",
+        "meaning": "latura cea mai mare"
+      }
+    ],
+    "sourcePage": 1,
+    "keywords": [
+      "dreptunghic",
+      "Pitagora"
+    ]
+  }
+]
