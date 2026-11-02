@@ -1245,6 +1245,54 @@ a {
   }
 }
 
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1100px) {
+  .lesson-study.is-expanded {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .lesson-study.is-expanded .study-head {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0.35rem 0.75rem;
+    background: var(--surface);
+  }
+
+  .lesson-study.is-expanded .study-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .lesson-study.is-expanded .orientation-hint,
+  .lesson-study.is-expanded .pdf-links {
+    display: none;
+  }
+
+  .lesson-study.is-expanded .pdf-viewer {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+    border-radius: 0;
+  }
+
+  .lesson-study.is-expanded .pdf-pages {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    padding: 8px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

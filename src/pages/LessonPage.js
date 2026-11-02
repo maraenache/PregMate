@@ -28,6 +28,7 @@ export function createLessonPage(lesson) {
     studyToggle.setAttribute('aria-expanded', String(!expanded));
     studyContent.hidden = expanded;
     studyToggle.textContent = expanded ? 'Afișează PDF' : 'Ascunde PDF';
+    studyToggle.closest('.lesson-study')?.classList.toggle('is-expanded', !expanded);
   });
   viewer.el.addEventListener('click', (event) => {
     if (event.target.closest('button, a, .pdf-page-label')) return;
@@ -110,7 +111,7 @@ export function createLessonPage(lesson) {
     ),
     h(
       'section',
-      { class: 'lesson-study', 'aria-labelledby': 'study-title' },
+      { class: 'lesson-study is-expanded', 'aria-labelledby': 'study-title' },
       h(
         'div',
         { class: 'study-head' },
