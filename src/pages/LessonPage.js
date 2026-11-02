@@ -5,15 +5,6 @@ import { createQuiz } from '../components/Quiz.js';
 import { dashboardHref, lessonHref } from '../utils/router.js';
 import { getScore, isCompleted, setCompleted, setLastLessonId } from '../utils/storage.js';
 
-function downloadName(lesson, number) {
-  const slug = lesson.title
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^A-Za-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-  return `Lectia-${number}-${slug}.pdf`;
-}
-
 export function createLessonPage(lesson) {
   setLastLessonId(lesson.id);
   const number = lessonPosition(lesson);
@@ -21,7 +12,27 @@ export function createLessonPage(lesson) {
   const questions = getQuestions(lesson.id);
   const pdfHref = assetUrl(lesson.pdf);
 
+  let studyContent;
+  let studyToggle;
   const viewer = createPDFViewer({ url: lesson.pdf, title: lesson.title });
+  studyContent = h(
+    'div',
+    { class: 'study-content', id: 'study-content' },
+    h('div', { class: 'pdf-links' }, h('a', { class: 'btn btn-ghost btn-small', href: pdfHref, target: '_blank', rel: 'noopener' }, 'Deschide PDF-ul original')),
+    h('p', { class: 'orientation-hint' }, 'Pentru o vizualizare mai bună, rotește telefonul.'),
+    viewer.el,
+  );
+  studyToggle = h('button', { type: 'button', class: 'btn btn-secondary btn-small study-toggle', 'aria-expanded': 'true', 'aria-controls': 'study-content' }, 'Ascunde PDF');
+  studyToggle.addEventListener('click', () => {
+    const expanded = studyToggle.getAttribute('aria-expanded') === 'true';
+    studyToggle.setAttribute('aria-expanded', String(!expanded));
+    studyContent.hidden = expanded;
+    studyToggle.textContent = expanded ? 'Afișează PDF' : 'Ascunde PDF';
+  });
+  viewer.el.addEventListener('click', (event) => {
+    if (event.target.closest('button, a, .pdf-page-label')) return;
+    if (studyToggle.getAttribute('aria-expanded') === 'true') studyToggle.click();
+  });
 
   const scoreText = () => {
     const score = getScore(lesson.id);
@@ -66,7 +77,10 @@ export function createLessonPage(lesson) {
           window.scrollTo({ top: 0, behavior: 'smooth' });
           titleEl.focus({ preventScroll: true });
         },
-        onShowPage: (page) => viewer.goToPage(page),
+        onShowPage: (page) => {
+          if (studyContent.hidden) studyToggle.click();
+          viewer.goToPage(page);
+        },
       })
     : null;
 
@@ -101,14 +115,9 @@ export function createLessonPage(lesson) {
         'div',
         { class: 'study-head' },
         h('h2', { id: 'study-title' }, 'Fișa de teorie'),
-        h(
-          'div',
-          { class: 'pdf-links' },
-          h('a', { class: 'btn btn-ghost btn-small', href: pdfHref, target: '_blank', rel: 'noopener' }, 'Deschide PDF-ul original'),
-          h('a', { class: 'btn btn-ghost btn-small', href: pdfHref, download: downloadName(lesson, number) }, 'Descarcă PDF'),
-        ),
+        studyToggle,
       ),
-      viewer.el,
+      studyContent,
     ),
     h(
       'div',

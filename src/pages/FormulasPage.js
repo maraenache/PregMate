@@ -4,11 +4,15 @@ import { renderLatex, richText, stripMath } from '../utils/math.js';
 import { matches } from '../utils/search.js';
 import { lessonHref } from '../utils/router.js';
 
-function formulaCard(formula, lesson) {
-  return h(
-    'article',
-    { class: 'formula-card', 'aria-labelledby': `formula-${formula.id}` },
-    h('h3', { id: `formula-${formula.id}`, class: 'formula-name' }, formula.name),
+function formulaCard(formula, lesson, initiallyExpanded = false) {
+  const titleButton = h(
+    'button',
+    { type: 'button', class: 'formula-toggle', 'aria-expanded': String(initiallyExpanded), 'aria-controls': `formula-content-${formula.id}` },
+    formula.name,
+  );
+  const content = h(
+    'div',
+    { class: 'formula-content', id: `formula-content-${formula.id}`, hidden: !initiallyExpanded },
     h('div', { class: 'formula-math' }, (Array.isArray(formula.latex) ? formula.latex : [formula.latex]).map((tex) => renderLatex(tex, true))),
     formula.conditions && h('p', { class: 'formula-conditions' }, richText(formula.conditions)),
     formula.variables?.length
@@ -25,6 +29,24 @@ function formulaCard(formula, lesson) {
       h('a', { href: lessonHref(lesson.id) }, 'Deschide lecția'),
     ),
   );
+
+  titleButton.addEventListener('click', () => {
+    const expanded = titleButton.getAttribute('aria-expanded') === 'true';
+    titleButton.setAttribute('aria-expanded', String(!expanded));
+    content.hidden = expanded;
+  });
+
+  const card = h(
+    'article',
+    { class: 'formula-card', 'aria-labelledby': `formula-${formula.id}` },
+    h('h3', { id: `formula-${formula.id}`, class: 'formula-name' }, titleButton),
+    content,
+  );
+  card.addEventListener('click', (event) => {
+    if (event.target.closest('a, button')) return;
+    if (titleButton.getAttribute('aria-expanded') === 'true') titleButton.click();
+  });
+  return card;
 }
 
 export function createFormulasPage() {
@@ -51,12 +73,40 @@ export function createFormulasPage() {
       );
       if (!items.length) continue;
       shown += items.length;
+      const groupContentId = `formula-group-content-${lesson.id}`;
+      const groupContent = h('div', { class: 'formula-grid', id: groupContentId }, items.map((f, index) => formulaCard(f, lesson, index === 0)));
+      const groupToggle = h(
+        'button',
+        { type: 'button', class: 'btn btn-ghost btn-small formula-group-toggle', 'aria-expanded': 'true', 'aria-controls': groupContentId },
+        'Ascunde formulele',
+      );
+      groupToggle.addEventListener('click', () => {
+        const expanded = groupToggle.getAttribute('aria-expanded') === 'true';
+        groupToggle.setAttribute('aria-expanded', String(!expanded));
+        groupContent.hidden = expanded;
+        groupToggle.textContent = expanded ? 'Arată formulele' : 'Ascunde formulele';
+      });
       groups.push(
         h(
           'section',
           { class: 'formula-group', 'aria-labelledby': `group-${lesson.id}` },
-          h('h2', { id: `group-${lesson.id}` }, h('span', { class: 'lesson-number' }, `Lecția ${lessonPosition(lesson)}`), ' ', lesson.title),
-          h('div', { class: 'formula-grid' }, items.map((f) => formulaCard(f, lesson))),
+          h(
+            'div',
+            { class: 'formula-group-head' },
+            h(
+              'h2',
+              { id: `group-${lesson.id}` },
+              h('span', { class: 'lesson-number' }, `Lecția ${lessonPosition(lesson)}`),
+              ' ',
+              h(
+                'span',
+                { class: 'formula-group-title' },
+                lesson.title.replace(/\bPartea\s+(\d+)\b/g, (_, part) => `Partea\u00a0${part}`),
+              ),
+            ),
+            groupToggle,
+          ),
+          groupContent,
         ),
       );
     }

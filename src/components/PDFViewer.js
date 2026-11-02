@@ -18,10 +18,8 @@ export function createPDFViewer({ url, title }) {
   const prevButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Pagina anterioară', disabled: true }, '‹');
   const nextButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Pagina următoare', disabled: true }, '›');
   const pageLabel = h('span', { class: 'pdf-page-label', 'aria-live': 'polite' }, 'Pagina – din –');
-  const zoomOutButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Micșorează', disabled: true }, '−');
-  const zoomInButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Mărește', disabled: true }, '+');
-  const zoomLabel = h('span', { class: 'pdf-zoom-label', 'aria-live': 'polite' }, '100%');
-  const fitButton = h('button', { type: 'button', class: 'btn btn-ghost btn-small', disabled: true }, 'Potrivește la lățime');
+  const zoomOutButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Micșorează fișa', disabled: true }, '−');
+  const zoomInButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Mărește fișa', disabled: true }, '+');
   const status = h(
     'div',
     { class: 'pdf-status', role: 'status' },
@@ -37,7 +35,7 @@ export function createPDFViewer({ url, title }) {
       'div',
       { class: 'pdf-toolbar', role: 'toolbar', 'aria-label': 'Controale document' },
       h('div', { class: 'pdf-toolbar-group' }, prevButton, pageLabel, nextButton),
-      h('div', { class: 'pdf-toolbar-group' }, zoomOutButton, zoomLabel, zoomInButton, fitButton),
+      h('div', { class: 'pdf-toolbar-group' }, zoomOutButton, zoomInButton),
     ),
     pagesEl,
   );
@@ -63,8 +61,6 @@ export function createPDFViewer({ url, title }) {
     nextButton.disabled = !n || current >= n;
     zoomOutButton.disabled = !n || zoom <= ZOOM_STEPS[0];
     zoomInButton.disabled = !n || zoom >= ZOOM_STEPS[ZOOM_STEPS.length - 1];
-    fitButton.disabled = !n || zoom === 1;
-    zoomLabel.textContent = `${Math.round(zoom * 100)}%`;
   }
 
   function availableWidth() {
@@ -168,7 +164,6 @@ export function createPDFViewer({ url, title }) {
   nextButton.addEventListener('click', () => scrollToPage(Math.min(numPages(), current + 1)));
   zoomInButton.addEventListener('click', () => setZoom(ZOOM_STEPS.find((step) => step > zoom) ?? zoom));
   zoomOutButton.addEventListener('click', () => setZoom([...ZOOM_STEPS].reverse().find((step) => step < zoom) ?? zoom));
-  fitButton.addEventListener('click', () => setZoom(1));
   pagesEl.addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
 
   const resizeObserver = new ResizeObserver(() => {

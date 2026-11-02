@@ -7,7 +7,7 @@ const MOON = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"
 
 export function createHeader() {
   const lessonsLink = h('a', { href: dashboardHref(), class: 'nav-link' }, 'Lecții');
-  const formulasLink = h('a', { href: formulasHref(), class: 'nav-link' }, 'Toate formulele');
+  const formulasLink = h('a', { href: formulasHref(), class: 'nav-link' }, 'Formule');
   const themeButton = h('button', { type: 'button', class: 'btn btn-icon theme-toggle' });
 
   function updateThemeButton(theme) {

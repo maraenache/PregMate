@@ -884,7 +884,7 @@
     "lessonId": "geometrie-analitica",
     "name": "Distanța dintre două puncte",
     "latex": "AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}",
-    "conditions": "Pentru A(x_A, y_A) și B(x_B, y_B).",
+    "conditions": "Pentru A(\\(x_A, y_A\\)) și B(\\(x_B, y_B\\)).",
     "variables": [],
     "sourcePage": 1,
     "keywords": [
@@ -898,7 +898,7 @@
     "lessonId": "geometrie-analitica",
     "name": "Coordonatele mijlocului unui segment",
     "latex": "x_M = \\frac{x_A + x_B}{2}, \\quad y_M = \\frac{y_A + y_B}{2}",
-    "conditions": "M(x_M, y_M) este mijlocul segmentului [AB].",
+    "conditions": "M(\\(x_M, y_M\\)) este mijlocul segmentului [AB].",
     "variables": [],
     "sourcePage": 1,
     "keywords": [
