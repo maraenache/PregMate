@@ -1,0 +1,132 @@
+[
+  {
+    "id": "unghiuri",
+    "order": 1,
+    "title": "Unghiuri",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/unghiuri.pdf",
+    "keywords": [
+      "unghiuri"
+    ]
+  },
+  {
+    "id": "triunghiuri",
+    "order": 2,
+    "title": "Triunghiuri",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/triunghiuri.pdf",
+    "keywords": [
+      "triunghiuri"
+    ]
+  },
+  {
+    "id": "cercul",
+    "order": 3,
+    "title": "Cercul",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/cercul.pdf",
+    "keywords": [
+      "cercul"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-1",
+    "order": 4,
+    "title": "Triunghiuri dreptunghice — Partea 1",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/triunghiuri-dreptunghice-1.pdf",
+    "keywords": [
+      "triunghiuri dreptunghice — partea 1"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-2",
+    "order": 5,
+    "title": "Triunghiuri dreptunghice — Partea 2",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/triunghiuri-dreptunghice-2.pdf",
+    "keywords": [
+      "triunghiuri dreptunghice — partea 2"
+    ]
+  },
+  {
+    "id": "triunghiuri-dreptunghice-3",
+    "order": 6,
+    "title": "Triunghiuri dreptunghice — Partea 3",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/triunghiuri-dreptunghice-3.pdf",
+    "keywords": [
+      "triunghiuri dreptunghice — partea 3"
+    ]
+  },
+  {
+    "id": "centrul-de-greutate",
+    "order": 7,
+    "title": "Centrul de greutate",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/centrul-de-greutate.pdf",
+    "keywords": [
+      "centrul de greutate"
+    ]
+  },
+  {
+    "id": "triunghiuri-asemenea",
+    "order": 8,
+    "title": "Triunghiuri asemenea",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/triunghiuri-asemenea.pdf",
+    "keywords": [
+      "triunghiuri asemenea"
+    ]
+  },
+  {
+    "id": "thales-asemanare",
+    "order": 9,
+    "title": "Teorema lui Thales și asemănarea",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/thales-asemanare.pdf",
+    "keywords": [
+      "teorema lui thales și asemănarea"
+    ]
+  },
+  {
+    "id": "linia-mijlocie",
+    "order": 10,
+    "title": "Linia mijlocie în triunghi și trapez",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/linia-mijlocie.pdf",
+    "keywords": [
+      "linia mijlocie în triunghi și trapez"
+    ]
+  },
+  {
+    "id": "aria-triunghiului",
+    "order": 11,
+    "title": "Formule pentru aria triunghiului",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/aria-triunghiului.pdf",
+    "keywords": [
+      "formule pentru aria triunghiului"
+    ]
+  },
+  {
+    "id": "ariile-patrulaterelor",
+    "order": 12,
+    "title": "Formule pentru ariile patrulaterelor",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/ariile-patrulaterelor.pdf",
+    "keywords": [
+      "formule pentru ariile patrulaterelor"
+    ]
+  },
+  {
+    "id": "geometrie-analitica",
+    "order": 13,
+    "title": "Geometrie analitică",
+    "description": "DE COMPLETAT DIN PDF",
+    "pdf": "pdf/geometrie-analitica.pdf",
+    "keywords": [
+      "geometrie analitică"
+    ]
+  }
+]
