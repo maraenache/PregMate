@@ -128,7 +128,7 @@
   {
     "id": "unghiuri-q10",
     "lessonId": "unghiuri",
-    "question": "Raza OB este în interiorul lui ∠AOC, m(∠AOB) = 30° și m(∠BOC) = 40°. Cât este m(∠AOC)?",
+    "question": "Semidreapta OB este în interiorul lui ∠AOC, m(∠AOB) = 30° și m(∠BOC) = 40°. Cât este m(∠AOC)?",
     "options": [
       "10°",
       "40°",
@@ -394,7 +394,7 @@
   {
     "id": "cercul-q09",
     "lessonId": "cercul",
-    "question": "Raza dusă la punctul de tangență este, față de tangentă:",
+    "question": "Raza dusă la punctul de tangență este ..... față de tangentă:",
     "options": [
       "paralelă",
       "perpendiculară",
