@@ -3,6 +3,8 @@ import { assetUrl } from '../data/index.js';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
 const ZOOM_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
+const MIN_ZOOM = ZOOM_STEPS[0];
+const MAX_ZOOM = ZOOM_STEPS[ZOOM_STEPS.length - 1];
 const PAGE_GAP = 16;
 
 let pdfjsPromise = null;
@@ -14,12 +16,7 @@ function loadPdfjs() {
   return pdfjsPromise;
 }
 
-export function createPDFViewer({ url, title }) {
-  const prevButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Pagina anterioară', disabled: true }, '‹');
-  const nextButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Pagina următoare', disabled: true }, '›');
-  const pageLabel = h('span', { class: 'pdf-page-label', 'aria-live': 'polite' }, 'Pagina – din –');
-  const zoomOutButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Micșorează fișa', disabled: true }, '−');
-  const zoomInButton = h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Mărește fișa', disabled: true }, '+');
+export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
   const status = h(
     'div',
     { class: 'pdf-status', role: 'status' },
@@ -27,16 +24,20 @@ export function createPDFViewer({ url, title }) {
     'Se încarcă documentul…',
   );
   const pagesEl = h('div', { class: 'pdf-pages', tabindex: '0', 'aria-label': `Paginile documentului „${title}”` }, status);
+  const originalLink = h('a', {
+    class: 'pdf-original-link icon-action',
+    href: originalUrl,
+    target: '_blank',
+    rel: 'noopener',
+    'aria-label': 'Deschide PDF-ul original',
+    title: 'Deschide PDF-ul original',
+  });
+  originalLink.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>';
 
   const el = h(
     'section',
     { class: 'pdf-viewer', 'aria-label': `Fișa de teorie: ${title}` },
-    h(
-      'div',
-      { class: 'pdf-toolbar', role: 'toolbar', 'aria-label': 'Controale document' },
-      h('div', { class: 'pdf-toolbar-group' }, prevButton, pageLabel, nextButton),
-      h('div', { class: 'pdf-toolbar-group' }, zoomOutButton, zoomInButton),
-    ),
+    h('div', { class: 'pdf-toolbar' }, originalLink),
     pagesEl,
   );
 
@@ -53,15 +54,6 @@ export function createPDFViewer({ url, title }) {
   let resizeTimer = null;
 
   const numPages = () => pageViewports.length;
-
-  function updateControls() {
-    const n = numPages();
-    pageLabel.textContent = n ? `Pagina ${current} din ${n}` : 'Pagina – din –';
-    prevButton.disabled = !n || current <= 1;
-    nextButton.disabled = !n || current >= n;
-    zoomOutButton.disabled = !n || zoom <= ZOOM_STEPS[0];
-    zoomInButton.disabled = !n || zoom >= ZOOM_STEPS[ZOOM_STEPS.length - 1];
-  }
 
   function availableWidth() {
     const style = getComputedStyle(pagesEl);
@@ -121,7 +113,6 @@ export function createPDFViewer({ url, title }) {
     if (!wrapper) return;
     pagesEl.scrollTo({ top: wrapper.offsetTop - PAGE_GAP, behavior: smooth ? 'smooth' : 'auto' });
     current = n;
-    updateControls();
   }
 
   function onScroll() {
@@ -133,13 +124,11 @@ export function createPDFViewer({ url, title }) {
     });
     if (page !== current) {
       current = page;
-      updateControls();
     }
   }
 
   function setZoom(value) {
-    zoom = value;
-    updateControls();
+    zoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, value));
     renderAll().catch(showError);
   }
 
@@ -157,13 +146,40 @@ export function createPDFViewer({ url, title }) {
     );
     pageViewports = [];
     wrappers = [];
-    updateControls();
   }
 
-  prevButton.addEventListener('click', () => scrollToPage(Math.max(1, current - 1)));
-  nextButton.addEventListener('click', () => scrollToPage(Math.min(numPages(), current + 1)));
-  zoomInButton.addEventListener('click', () => setZoom(ZOOM_STEPS.find((step) => step > zoom) ?? zoom));
-  zoomOutButton.addEventListener('click', () => setZoom([...ZOOM_STEPS].reverse().find((step) => step < zoom) ?? zoom));
+  let pinchStartDistance = 0;
+  let pinchStartZoom = zoom;
+  let pinchChanged = false;
+  const touchDistance = (touches) => Math.hypot(
+    touches[0].clientX - touches[1].clientX,
+    touches[0].clientY - touches[1].clientY,
+  );
+  pagesEl.addEventListener('touchstart', (event) => {
+    if (event.touches.length !== 2) return;
+    pinchStartDistance = touchDistance(event.touches);
+    pinchStartZoom = zoom;
+    pinchChanged = false;
+  }, { passive: true });
+  pagesEl.addEventListener('touchmove', (event) => {
+    if (event.touches.length !== 2 || !pinchStartDistance) return;
+    event.preventDefault();
+    zoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, pinchStartZoom * touchDistance(event.touches) / pinchStartDistance));
+    layout();
+    pinchChanged = true;
+  }, { passive: false });
+  const finishPinch = () => {
+    if (!pinchStartDistance) return;
+    pinchStartDistance = 0;
+    if (pinchChanged) setZoom(zoom);
+  };
+  pagesEl.addEventListener('touchend', finishPinch, { passive: true });
+  pagesEl.addEventListener('touchcancel', finishPinch, { passive: true });
+  pagesEl.addEventListener('wheel', (event) => {
+    if (!event.ctrlKey || !numPages()) return;
+    event.preventDefault();
+    setZoom(zoom * Math.exp(-event.deltaY * 0.002));
+  }, { passive: false });
   pagesEl.addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive: true });
 
   const resizeObserver = new ResizeObserver(() => {
@@ -195,7 +211,6 @@ export function createPDFViewer({ url, title }) {
       );
       pagesEl.replaceChildren(...wrappers);
       current = 1;
-      updateControls();
       resizeObserver.observe(pagesEl);
       await renderAll();
     } catch (error) {
@@ -207,6 +222,9 @@ export function createPDFViewer({ url, title }) {
 
   return {
     el,
+    refresh() {
+      return renderAll().catch(showError);
+    },
     goToPage(n) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (n >= 1 && n <= numPages()) scrollToPage(n);

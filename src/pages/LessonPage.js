@@ -5,6 +5,19 @@ import { createQuiz } from '../components/Quiz.js';
 import { dashboardHref, lessonHref } from '../utils/router.js';
 import { getScore, isCompleted, setCompleted, setLastLessonId } from '../utils/storage.js';
 
+const ICONS = {
+  expand: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg>',
+  return: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 14 4 19l5 5M4 19h10a6 6 0 0 0 0-12h-2" transform="translate(0 -2)"/></svg>',
+  collapse: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 14 6-6 6 6"/></svg>',
+  expandPanel: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 10 6 6 6-6"/></svg>',
+};
+
+function setIconButton(button, icon, label) {
+  button.innerHTML = icon;
+  button.setAttribute('aria-label', label);
+  button.title = label;
+}
+
 export function createLessonPage(lesson) {
   setLastLessonId(lesson.id);
   const number = lessonPosition(lesson);
@@ -14,27 +27,56 @@ export function createLessonPage(lesson) {
 
   let studyContent;
   let studyToggle;
-  const viewer = createPDFViewer({ url: lesson.pdf, title: lesson.title });
+  let readingToggle;
+  let pdfToolbar;
+  const viewer = createPDFViewer({ url: lesson.pdf, title: lesson.title, originalUrl: pdfHref });
   studyContent = h(
     'div',
     { class: 'study-content', id: 'study-content' },
-    h('div', { class: 'pdf-links' }, h('a', { class: 'btn btn-ghost btn-small', href: pdfHref, target: '_blank', rel: 'noopener' }, 'Deschide PDF-ul original')),
-    h('p', { class: 'orientation-hint' }, 'Pentru o vizualizare mai bună, rotește telefonul.'),
     viewer.el,
   );
-  studyToggle = h('button', { type: 'button', class: 'btn btn-secondary btn-small study-toggle', 'aria-expanded': 'true', 'aria-controls': 'study-content' }, 'Ascunde PDF');
+  studyToggle = h('button', { type: 'button', class: 'btn btn-icon icon-action study-toggle', 'aria-expanded': 'true', 'aria-controls': 'study-content' });
+  setIconButton(studyToggle, ICONS.collapse, 'Ascunde PDF');
   studyToggle.addEventListener('click', () => {
     const expanded = studyToggle.getAttribute('aria-expanded') === 'true';
     studyToggle.setAttribute('aria-expanded', String(!expanded));
-    studyContent.hidden = expanded;
-    studyToggle.textContent = expanded ? 'Afișează PDF' : 'Ascunde PDF';
-    studyToggle.closest('.lesson-study')?.classList.toggle('is-expanded', !expanded);
+    viewer.el.classList.toggle('is-collapsed', expanded);
+    setIconButton(studyToggle, expanded ? ICONS.expandPanel : ICONS.collapse, expanded ? 'Afișează PDF' : 'Ascunde PDF');
+    const study = studyToggle.closest('.lesson-study');
+    study?.classList.toggle('is-expanded', !expanded);
+    if (expanded && study?.classList.contains('is-reading-mode')) {
+      study.classList.remove('is-reading-mode');
+      readingToggle.setAttribute('aria-pressed', 'false');
+      setIconButton(readingToggle, ICONS.expand, 'Citește pe tot ecranul');
+      pdfToolbar?.append(readingToggle);
+    }
+    if (!expanded) {
+      viewer.el.classList.add('is-refreshing');
+      requestAnimationFrame(() => {
+        viewer.refresh().finally(() => viewer.el.classList.remove('is-refreshing'));
+      });
+    }
   });
-  viewer.el.addEventListener('click', (event) => {
-    if (event.target.closest('button, a, .pdf-page-label')) return;
-    if (studyToggle.getAttribute('aria-expanded') === 'true') studyToggle.click();
+  readingToggle = h('button', { type: 'button', class: 'btn btn-icon icon-action reading-toggle', 'aria-pressed': 'false' });
+  setIconButton(readingToggle, ICONS.expand, 'Citește pe tot ecranul');
+  readingToggle.addEventListener('click', () => {
+    const active = readingToggle.getAttribute('aria-pressed') === 'true';
+    const nextActive = !active;
+    readingToggle.setAttribute('aria-pressed', String(nextActive));
+    setIconButton(readingToggle, nextActive ? ICONS.return : ICONS.expand, nextActive ? 'Înapoi la lecție' : 'Citește pe tot ecranul');
+    const study = readingToggle.closest('.lesson-study');
+    study?.classList.toggle('is-reading-mode', nextActive);
+    if (nextActive) study?.querySelector('.study-head')?.append(readingToggle);
+    else pdfToolbar?.append(readingToggle);
+    if (nextActive) {
+      studyToggle.setAttribute('aria-expanded', 'true');
+      viewer.el.classList.remove('is-collapsed');
+      setIconButton(studyToggle, ICONS.collapse, 'Ascunde PDF');
+      studyToggle.closest('.lesson-study')?.classList.add('is-expanded');
+    }
   });
-
+  pdfToolbar = viewer.el.querySelector('.pdf-toolbar');
+  pdfToolbar?.append(readingToggle);
   const scoreText = () => {
     const score = getScore(lesson.id);
     return score ? `Ultimul scor: ${score.correct}/${score.total}` : 'Nu ai rezolvat încă testul.';
@@ -79,7 +121,7 @@ export function createLessonPage(lesson) {
           titleEl.focus({ preventScroll: true });
         },
         onShowPage: (page) => {
-          if (studyContent.hidden) studyToggle.click();
+          if (studyToggle.getAttribute('aria-expanded') !== 'true') studyToggle.click();
           viewer.goToPage(page);
         },
       })
@@ -116,7 +158,6 @@ export function createLessonPage(lesson) {
         'div',
         { class: 'study-head' },
         h('h2', { id: 'study-title' }, 'Fișa de teorie'),
-        studyToggle,
       ),
       studyContent,
     ),
@@ -138,6 +179,6 @@ export function createLessonPage(lesson) {
         : h('span'),
     ),
   );
-
+  el.querySelector('.study-head')?.append(studyToggle);
   return { el, title: lesson.title, focusTarget: titleEl, destroy: () => viewer.destroy() };
 }
