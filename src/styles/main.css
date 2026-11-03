@@ -1037,6 +1037,7 @@ a {
 .formula-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  align-items: start;
   gap: 1rem;
 }
 
@@ -1056,8 +1057,11 @@ a {
 }
 
 .formula-toggle {
-  display: block;
+  display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   padding: 0;
   border: 0;
   background: transparent;
@@ -1067,6 +1071,28 @@ a {
   line-height: inherit;
   text-align: left;
   cursor: pointer;
+}
+
+.formula-chevron {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.formula-chevron svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
 }
 
 .formula-content {
@@ -1246,61 +1272,66 @@ a {
   }
 }
 
+.lesson-study.is-reading-mode {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.lesson-study.is-reading-mode .study-head {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: max(0.35rem, env(safe-area-inset-top, 0px)) 0.75rem 0.35rem;
+  background: var(--surface);
+}
+
+.lesson-study.is-reading-mode .study-toggle {
+  display: none;
+}
+
+.lesson-study.is-reading-mode .study-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.lesson-study.is-reading-mode .pdf-links {
+  display: none;
+}
+
+.lesson-study.is-reading-mode .pdf-viewer {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 0;
+}
+
+.lesson-study.is-reading-mode .pdf-toolbar {
+  display: none;
+}
+
+.lesson-study.is-reading-mode .pdf-pages {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+  padding: 8px;
+}
+
 @media (max-width: 800px) {
-  .reading-toggle {
+  .reading-toggle,
+  .lesson-study.is-reading-mode .reading-toggle {
     display: inline-flex;
   }
 
-  .lesson-study.is-reading-mode {
-    position: fixed;
-    inset: 0;
-    z-index: 30;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
-    overflow: hidden;
-    background: var(--bg);
-  }
-
-  .lesson-study.is-reading-mode .study-head {
-    flex: 0 0 auto;
-    margin: 0;
-    padding: max(0.35rem, env(safe-area-inset-top, 0px)) 0.75rem 0.35rem;
-    background: var(--surface);
-  }
-
-  .lesson-study.is-reading-mode .study-toggle {
-    display: none;
-  }
-
-  .lesson-study.is-reading-mode .study-content {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    min-height: 0;
-  }
-
-  .lesson-study.is-reading-mode .pdf-links {
-    display: none;
-  }
-
-  .lesson-study.is-reading-mode .pdf-viewer {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    min-height: 0;
-    border-radius: 0;
-  }
-
-  .lesson-study.is-reading-mode .pdf-toolbar {
-    display: none;
-  }
-
   .lesson-study.is-reading-mode .pdf-pages {
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 0;
     padding: 4px;
   }
 }

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01fe095d-85d8-485d-8198-9dac0533dbc3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PDFViewer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PDFViewer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LessonPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LessonPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

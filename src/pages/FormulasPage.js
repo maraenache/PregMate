@@ -4,11 +4,19 @@ import { renderLatex, richText, stripMath } from '../utils/math.js';
 import { matches } from '../utils/search.js';
 import { lessonHref } from '../utils/router.js';
 
+const CHEVRONS = {
+  up: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 14 6-6 6 6"/></svg>',
+  down: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 10 6 6 6-6"/></svg>',
+};
+
 function formulaCard(formula, lesson, initiallyExpanded = false) {
+  const chevron = h('span', { class: 'formula-chevron', 'aria-hidden': 'true' });
+  chevron.innerHTML = initiallyExpanded ? CHEVRONS.up : CHEVRONS.down;
   const titleButton = h(
     'button',
     { type: 'button', class: 'formula-toggle', 'aria-expanded': String(initiallyExpanded), 'aria-controls': `formula-content-${formula.id}` },
     formula.name,
+    chevron,
   );
   const content = h(
     'div',
@@ -30,10 +38,17 @@ function formulaCard(formula, lesson, initiallyExpanded = false) {
     ),
   );
 
-  titleButton.addEventListener('click', () => {
+  const toggleFormula = () => {
     const expanded = titleButton.getAttribute('aria-expanded') === 'true';
     titleButton.setAttribute('aria-expanded', String(!expanded));
     content.hidden = expanded;
+    chevron.innerHTML = expanded ? CHEVRONS.down : CHEVRONS.up;
+  };
+  titleButton.addEventListener('click', toggleFormula);
+  chevron.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleFormula();
   });
 
   const card = h(
@@ -44,7 +59,7 @@ function formulaCard(formula, lesson, initiallyExpanded = false) {
   );
   card.addEventListener('click', (event) => {
     if (event.target.closest('a, button')) return;
-    if (titleButton.getAttribute('aria-expanded') === 'true') titleButton.click();
+    titleButton.click();
   });
   return card;
 }
@@ -63,6 +78,7 @@ export function createFormulasPage() {
 
   function render() {
     const query = input.value;
+    const compactView = window.matchMedia('(max-width: 600px)').matches;
     let shown = 0;
     const groups = [];
     for (const lesson of lessons) {
@@ -74,7 +90,7 @@ export function createFormulasPage() {
       if (!items.length) continue;
       shown += items.length;
       const groupContentId = `formula-group-content-${lesson.id}`;
-      const groupContent = h('div', { class: 'formula-grid', id: groupContentId }, items.map((f, index) => formulaCard(f, lesson, index === 0)));
+      const groupContent = h('div', { class: 'formula-grid', id: groupContentId }, items.map((f, index) => formulaCard(f, lesson, !compactView || index === 0)));
       const groupToggle = h(
         'button',
         { type: 'button', class: 'btn btn-ghost btn-small formula-group-toggle', 'aria-expanded': 'true', 'aria-controls': groupContentId },
