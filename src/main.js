@@ -7,6 +7,7 @@ import { createHeader } from './components/Header.js';
 import { createDashboard } from './pages/Dashboard.js';
 import { createLessonPage } from './pages/LessonPage.js';
 import { createFormulasPage } from './pages/FormulasPage.js';
+import { createTestsPage } from './pages/TestsPage.js';
 import { createNotFound } from './pages/NotFound.js';
 
 initTheme();
@@ -43,6 +44,7 @@ function render() {
   let page;
   if (route.name === 'dashboard') page = createDashboard();
   else if (route.name === 'formulas') page = createFormulasPage();
+  else if (route.name === 'tests') page = createTestsPage();
   else if (route.name === 'lesson') {
     const lesson = getLesson(route.id);
     page = lesson ? createLessonPage(lesson) : createNotFound('Lecția căutată nu există.');

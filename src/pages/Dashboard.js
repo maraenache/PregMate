@@ -4,7 +4,7 @@ import { createLessonCard } from '../components/LessonCard.js';
 import { createProgressBar, percentOf } from '../components/ProgressBar.js';
 import { getLastLessonId, isCompleted } from '../utils/storage.js';
 import { searchLessons } from '../utils/search.js';
-import { formulasHref, lessonHref } from '../utils/router.js';
+import { formulasHref, lessonHref, testsHref } from '../utils/router.js';
 
 export function createDashboard() {
   const total = lessons.length;
@@ -71,7 +71,7 @@ export function createDashboard() {
         h(
           'p',
           { class: 'lead' },
-          'Recapitulează noțiunile fundamentale de geometrie lecție cu lecție: citește fișa de teorie, apoi verifică-ți cunoștințele cu un test de 10 întrebări.',
+          'Recapitulează noțiunile fundamentale de geometrie lecție cu lecție: citește fișa de teorie, apoi verifică-ți cunoștințele cu teste scurte sau detaliate.',
         ),
         h('div', { class: 'hero-actions' }, resume),
       ),
@@ -83,6 +83,7 @@ export function createDashboard() {
         createProgressBar({ value: done, max: total, label: 'Progresul cursului' }),
         h('p', { class: 'muted small' }, `${done} din ${total} lecții marcate ca învățate`),
         h('a', { class: 'link-arrow', href: formulasHref() }, 'Toate formulele →'),
+        h('a', { class: 'link-arrow', href: testsHref() }, 'Teste mixte →'),
       ),
     ),
     h(

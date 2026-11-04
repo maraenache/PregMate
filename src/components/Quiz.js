@@ -2,14 +2,24 @@ import { h } from '../utils/dom.js';
 import { richText } from '../utils/math.js';
 import { lessonHref } from '../utils/router.js';
 import { setScore } from '../utils/storage.js';
+import { getLesson } from '../data/index.js';
 
 const LETTERS = ['A', 'B', 'C', 'D'];
 
-function encouragement(percent) {
+function encouragement(percent, scope) {
   if (percent === 100) return 'Excelent! Ai răspuns corect la toate întrebările.';
-  if (percent >= 80) return 'Foarte bine! Stăpânești aproape toate noțiunile din această lecție.';
-  if (percent >= 50) return 'Bine! Mai recitește fișa pentru întrebările greșite și încearcă din nou.';
-  return 'Nu te descuraja! Recitește fișa de teorie și repetă testul.';
+  if (percent >= 80) return `Foarte bine! Stăpânești aproape toată materia: ${scope}.`;
+  if (percent >= 50) return `Bine! Recitește fișele pentru întrebările greșite și repetă materia: ${scope}.`;
+  return `Nu te descuraja! Recitește fișele de teorie și repetă testul: ${scope}.`;
+}
+
+function shuffle(items) {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
 }
 
 export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLesson, onShowPage }) {
@@ -19,6 +29,8 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
   let runQuestions = questions;
   let wrongQuestions = [];
   let reviewingMistakes = false;
+  let chapterResults = new Map();
+  const backLabel = lesson.id === 'test-mixt' ? 'Înapoi la teste' : 'Înapoi la lecție';
 
   function renderQuestion() {
     const question = runQuestions[index];
@@ -63,6 +75,13 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
       const correct = selected === question.correctIndex;
       if (correct) correctCount++;
       else wrongQuestions.push(question);
+      if (!reviewingMistakes) {
+        const lessonId = question.lessonId ?? lesson.id;
+        const chapter = chapterResults.get(lessonId) ?? { correct: 0, total: 0 };
+        chapter.total++;
+        if (correct) chapter.correct++;
+        chapterResults.set(lessonId, chapter);
+      }
       options.forEach(({ input, label }, i) => {
         input.disabled = true;
         if (i === question.correctIndex) label.classList.add('is-correct');
@@ -73,12 +92,17 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
         h('p', { class: 'feedback-title' }, correct ? '✓ Corect!' : '✗ Răspuns greșit.'),
         h('p', {}, h('strong', {}, 'Răspunsul corect: '), `${LETTERS[question.correctIndex]}. `, richText(question.options[question.correctIndex])),
         h('p', {}, richText(question.explanation)),
-        h(
-          'p',
-          { class: 'feedback-source' },
-          `Sursa: fișa „${lesson.title}”, pagina ${question.sourcePage}. `,
-          h('button', { type: 'button', class: 'link-button', onClick: () => onShowPage?.(question.sourcePage) }, `Vezi pagina ${question.sourcePage}`),
-        ),
+        (() => {
+          const sourceLesson = getLesson(question.lessonId) ?? lesson;
+          return h(
+            'p',
+            { class: 'feedback-source' },
+            `Sursa: fișa „${sourceLesson.title}”, pagina ${question.sourcePage}. `,
+            onShowPage && sourceLesson.id === lesson.id
+              ? h('button', { type: 'button', class: 'link-button', onClick: () => onShowPage(question.sourcePage) }, `Vezi pagina ${question.sourcePage}`)
+              : h('a', { href: lessonHref(sourceLesson.id), target: '_blank', rel: 'noopener' }, 'Deschide lecția'),
+          );
+        })(),
       );
       feedback.hidden = false;
       feedback.setAttribute('role', 'status');
@@ -110,6 +134,31 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
       setScore(lesson.id, correctCount, total);
       onFinish?.({ correct: correctCount, total });
     }
+    const chapterBreakdown = lesson.id === 'test-mixt' && !reviewingMistakes
+      ? h(
+          'section',
+          { class: 'chapter-breakdown', 'aria-labelledby': 'chapter-breakdown-title' },
+          h('h3', { id: 'chapter-breakdown-title' }, 'Rezultate pe capitole'),
+          h(
+            'ul',
+            { class: 'chapter-breakdown-list' },
+            [...chapterResults.entries()]
+              .sort(([first], [second]) => (getLesson(first)?.order ?? 0) - (getLesson(second)?.order ?? 0))
+              .map(([lessonId, score]) => {
+                const sourceLesson = getLesson(lessonId);
+                const percentage = Math.round((score.correct / score.total) * 100);
+                return h(
+                  'li',
+                  { class: 'chapter-breakdown-item' },
+                  h('span', { class: 'chapter-breakdown-name' }, sourceLesson?.title ?? lessonId),
+                  h('strong', {}, `${score.correct}/${score.total}`),
+                  h('span', { class: 'muted small' }, `${percentage}%`),
+                  sourceLesson && h('a', { href: lessonHref(lessonId) }, 'Deschide lecția'),
+                );
+              }),
+          ),
+        )
+      : null;
     const heading = h('h3', { tabindex: '-1' }, reviewingMistakes ? 'Rezultatul repetării' : 'Rezultatul testului');
     el.replaceChildren(
       h(
@@ -123,7 +172,8 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
           h('div', { class: 'stat' }, h('span', { class: 'stat-value' }, `${correctCount}/${total}`), h('span', { class: 'stat-label' }, 'scor')),
           h('div', { class: 'stat' }, h('span', { class: 'stat-value' }, `${percent}%`), h('span', { class: 'stat-label' }, 'procentaj')),
         ),
-        h('p', { class: 'results-message' }, encouragement(percent)),
+        h('p', { class: 'results-message' }, encouragement(percent, lesson.title)),
+        chapterBreakdown,
         h(
           'p',
           { class: 'muted small' },
@@ -136,7 +186,7 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
             ? h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => startReview(wrongQuestions) }, 'Repetă întrebările greșite')
             : null,
           h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, 'Repetă testul'),
-          h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => onBackToLesson?.() }, 'Înapoi la lecție'),
+          h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => onBackToLesson?.() }, backLabel),
           nextLesson && h('a', { class: 'btn btn-secondary', href: lessonHref(nextLesson.id) }, 'Lecția următoare'),
         ),
       ),
@@ -148,16 +198,17 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
   function start() {
     index = 0;
     correctCount = 0;
-    runQuestions = questions;
+    runQuestions = shuffle(questions);
     wrongQuestions = [];
     reviewingMistakes = false;
+    chapterResults = new Map();
     renderQuestion();
   }
 
   function startReview(reviewQuestions) {
     index = 0;
     correctCount = 0;
-    runQuestions = [...reviewQuestions];
+    runQuestions = shuffle(reviewQuestions);
     wrongQuestions = [];
     reviewingMistakes = true;
     renderQuestion();

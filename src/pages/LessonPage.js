@@ -1,5 +1,6 @@
 import { h } from '../utils/dom.js';
 import { assetUrl, getNeighbors, getQuestions, lessonPosition } from '../data/index.js';
+import { getDetailedQuestions } from '../data/detailedQuestions.js';
 import { createPDFViewer } from '../components/PDFViewer.js';
 import { createQuiz } from '../components/Quiz.js';
 import { dashboardHref, lessonHref } from '../utils/router.js';
@@ -23,6 +24,7 @@ export function createLessonPage(lesson) {
   const number = lessonPosition(lesson);
   const { previous, next } = getNeighbors(lesson.id);
   const questions = getQuestions(lesson.id);
+  const detailedQuestions = getDetailedQuestions(lesson.id, questions);
   const pdfHref = assetUrl(lesson.pdf);
 
   let studyContent;
@@ -97,47 +99,48 @@ export function createLessonPage(lesson) {
   const titleEl = h('h1', { id: 'page-title', tabindex: '-1' }, lesson.title);
 
   const quizArea = h('div', { class: 'quiz-area' });
-  const startButton = h('button', { type: 'button', class: 'btn btn-primary btn-large' }, 'Începe testul');
+  const startButton = h('button', { type: 'button', class: 'btn btn-primary btn-large' }, `Test scurt · ${questions.length} întrebări`);
+  const detailedStartButton = h('button', { type: 'button', class: 'btn btn-secondary btn-large' }, 'Test detaliat · 40 de întrebări');
   const quizIntro = h(
     'div',
     { class: 'quiz-intro' },
-    h('p', {}, `Testul conține ${questions.length} întrebări cu un singur răspuns corect. După fiecare răspuns vezi explicația și pagina din fișă unde găsești informația.`),
+    h('p', {}, 'Alege varianta de test. După fiecare răspuns vezi explicația și pagina din fișă unde găsești informația.'),
     scoreEl,
-    startButton,
+    h('div', { class: 'quiz-actions' }, startButton, detailedStartButton),
   );
 
-  const quiz = questions.length
-    ? createQuiz({
-        lesson,
-        questions,
-        nextLesson: next,
-        onFinish: () => {
-          scoreEl.textContent = scoreText();
-        },
-        onBackToLesson: () => {
-          quizArea.replaceChildren();
-          quizIntro.hidden = false;
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          titleEl.focus({ preventScroll: true });
-        },
-        onShowPage: (page) => {
-          if (studyToggle.getAttribute('aria-expanded') !== 'true') studyToggle.click();
-          viewer.goToPage(page);
-        },
-      })
-    : null;
-
-  startButton.addEventListener('click', () => {
+  const runQuiz = (questionSet) => {
+    const quiz = createQuiz({
+      lesson,
+      questions: questionSet,
+      nextLesson: next,
+      onFinish: () => {
+        scoreEl.textContent = scoreText();
+      },
+      onBackToLesson: () => {
+        quizArea.replaceChildren();
+        quizIntro.hidden = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        titleEl.focus({ preventScroll: true });
+      },
+      onShowPage: (page) => {
+        if (studyToggle.getAttribute('aria-expanded') !== 'true') studyToggle.click();
+        viewer.goToPage(page);
+      },
+    });
     quizIntro.hidden = true;
     quizArea.replaceChildren(quiz.el);
     quiz.start();
-  });
+  };
+
+  startButton.addEventListener('click', () => runQuiz(questions));
+  detailedStartButton.addEventListener('click', () => runQuiz(detailedQuestions));
 
   const quizSection = h(
     'section',
     { class: 'card quiz-section', 'aria-labelledby': 'quiz-title' },
     h('h2', { id: 'quiz-title' }, 'Test de verificare'),
-    quiz ? [quizIntro, quizArea] : h('p', { class: 'error-text', role: 'alert' }, 'Întrebările pentru această lecție nu sunt disponibile.'),
+    questions.length ? [quizIntro, quizArea] : h('p', { class: 'error-text', role: 'alert' }, 'Întrebările pentru această lecție nu sunt disponibile.'),
   );
 
   const el = h(

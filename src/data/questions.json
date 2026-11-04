@@ -280,6 +280,146 @@
     "sourcePage": 2
   },
   {
+    "id": "patrulatere-q01",
+    "lessonId": "patrulatere",
+    "question": "Un patrulater are:",
+    "options": [
+      "3 laturi, 3 vârfuri și 3 unghiuri",
+      "4 laturi, 4 vârfuri și 4 unghiuri",
+      "4 laturi și 2 unghiuri",
+      "5 laturi, 5 vârfuri și 5 unghiuri"
+    ],
+    "correctIndex": 1,
+    "explanation": "Patrulaterul este poligonul cu 4 laturi, 4 vârfuri și 4 unghiuri.",
+    "sourcePage": 1
+  },
+  {
+    "id": "patrulatere-q02",
+    "lessonId": "patrulatere",
+    "question": "Care este suma unghiurilor interioare ale unui patrulater?",
+    "options": [
+      "180°",
+      "270°",
+      "360°",
+      "540°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Suma unghiurilor interioare ale unui patrulater este 360°.",
+    "sourcePage": 1
+  },
+  {
+    "id": "patrulatere-q03",
+    "lessonId": "patrulatere",
+    "question": "Ce proprietate caracterizează un patrulater convex, conform fișei?",
+    "options": [
+      "Toate unghiurile interioare sunt mai mici de 180°, iar diagonalele sunt în interior.",
+      "Un unghi interior este mai mare de 180°.",
+      "O diagonală trece prin exteriorul patrulaterului.",
+      "Are exact două unghiuri drepte."
+    ],
+    "correctIndex": 0,
+    "explanation": "La un patrulater convex, toate unghiurile sunt sub 180°, iar diagonalele se află în interior.",
+    "sourcePage": 1
+  },
+  {
+    "id": "patrulatere-q04",
+    "lessonId": "patrulatere",
+    "question": "Care afirmație descrie un patrulater concav?",
+    "options": [
+      "Toate unghiurile sunt drepte.",
+      "Laturile opuse sunt paralele.",
+      "Toate unghiurile sunt mai mici de 180°.",
+      "Un unghi interior este mai mare de 180°, iar o diagonală trece prin exterior."
+    ],
+    "correctIndex": 3,
+    "explanation": "Într-un patrulater concav, un unghi interior depășește 180°, iar o diagonală trece prin exterior.",
+    "sourcePage": 1
+  },
+  {
+    "id": "patrulatere-q05",
+    "lessonId": "patrulatere",
+    "question": "Într-un paralelogram, diagonalele:",
+    "options": [
+      "sunt întotdeauna egale",
+      "se înjumătățesc, dar nu sunt în general egale",
+      "sunt întotdeauna perpendiculare",
+      "sunt bisectoarele tuturor unghiurilor"
+    ],
+    "correctIndex": 1,
+    "explanation": "Diagonalele paralelogramului se înjumătățesc reciproc, dar nu sunt în general egale.",
+    "sourcePage": 1
+  },
+  {
+    "id": "patrulatere-q06",
+    "lessonId": "patrulatere",
+    "question": "Care proprietate a diagonalelor este specificată pentru romb?",
+    "options": [
+      "Sunt paralele.",
+      "Sunt egale în orice romb.",
+      "Sunt perpendiculare și bisectoare ale unghiurilor.",
+      "Nu se înjumătățesc."
+    ],
+    "correctIndex": 2,
+    "explanation": "Diagonalele rombului sunt perpendiculare, se înjumătățesc reciproc și bisectează unghiurile.",
+    "sourcePage": 2
+  },
+  {
+    "id": "patrulatere-q07",
+    "lessonId": "patrulatere",
+    "question": "Într-un dreptunghi, diagonalele sunt:",
+    "options": [
+      "egale și se înjumătățesc",
+      "perpendiculare în orice dreptunghi",
+      "bisectoare ale unghiurilor",
+      "mai lungi decât toate laturile, indiferent de dimensiuni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Diagonalele dreptunghiului sunt egale și se înjumătățesc reciproc.",
+    "sourcePage": 3
+  },
+  {
+    "id": "patrulatere-q08",
+    "lessonId": "patrulatere",
+    "question": "Ce proprietăți are un pătrat?",
+    "options": [
+      "Doar laturile opuse sunt egale.",
+      "Are două unghiuri drepte și două obtuze.",
+      "Diagonalele sunt egale, dar nu se înjumătățesc.",
+      "Toate laturile sunt egale și toate unghiurile sunt drepte."
+    ],
+    "correctIndex": 3,
+    "explanation": "Pătratul are toate laturile egale și toate cele patru unghiuri de 90°.",
+    "sourcePage": 3
+  },
+  {
+    "id": "patrulatere-q09",
+    "lessonId": "patrulatere",
+    "question": "Ce definește un trapez în fișă?",
+    "options": [
+      "Un patrulater cu toate laturile egale.",
+      "Un patrulater cu două laturi paralele și două neparalele.",
+      "Un patrulater cu toate unghiurile drepte.",
+      "Un patrulater fără laturi paralele."
+    ],
+    "correctIndex": 1,
+    "explanation": "Trapezul este patrulaterul cu două laturi paralele, numite baze, și două laturi neparalele.",
+    "sourcePage": 4
+  },
+  {
+    "id": "patrulatere-q10",
+    "lessonId": "patrulatere",
+    "question": "Bazele unui trapez măsoară B și b. Cum se calculează linia mijlocie m?",
+    "options": [
+      "m = B + b",
+      "m = B · b",
+      "m = (B + b) / 2",
+      "m = (B − b) / 2"
+    ],
+    "correctIndex": 2,
+    "explanation": "Linia mijlocie a trapezului este media aritmetică a bazelor: m = (B + b) / 2.",
+    "sourcePage": 4
+  },
+  {
     "id": "cercul-q01",
     "lessonId": "cercul",
     "question": "Coarda care trece prin centrul cercului se numește:",

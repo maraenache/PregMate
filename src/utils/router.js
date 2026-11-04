@@ -10,9 +10,11 @@ export function parseHash(hash) {
   if (parts.length === 0) return { name: 'dashboard' };
   if (parts[0] === 'lectie' && parts[1] && parts.length === 2) return { name: 'lesson', id: parts[1] };
   if (parts[0] === 'formule' && parts.length === 1) return { name: 'formulas' };
+  if (parts[0] === 'teste' && parts.length === 1) return { name: 'tests' };
   return { name: 'notfound' };
 }
 
 export const lessonHref = (id) => `#/lectie/${encodeURIComponent(id)}`;
 export const dashboardHref = () => '#/';
 export const formulasHref = () => '#/formule';
+export const testsHref = () => '#/teste';
