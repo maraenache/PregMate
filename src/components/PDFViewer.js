@@ -2,9 +2,8 @@ import { h } from '../utils/dom.js';
 import { assetUrl } from '../data/index.js';
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
-const ZOOM_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
-const MIN_ZOOM = ZOOM_STEPS[0];
-const MAX_ZOOM = ZOOM_STEPS[ZOOM_STEPS.length - 1];
+const MIN_ZOOM = 0.5;
+const MAX_ZOOM = 3;
 const PAGE_GAP = 16;
 
 let pdfjsPromise = null;
@@ -46,12 +45,14 @@ export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
   let pageViewports = [];
   let wrappers = [];
   let zoom = 1;
+  let renderedZoom = 1;
   let current = 1;
   let generation = 0;
   let renderTasks = [];
   let destroyed = false;
   let lastWidth = 0;
   let resizeTimer = null;
+  let zoomRenderTimer = null;
 
   const numPages = () => pageViewports.length;
 
@@ -61,34 +62,83 @@ export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
     return Math.max(160, pagesEl.clientWidth - padding);
   }
 
-  function layout() {
+  function layout(scale = zoom) {
     const width = availableWidth();
     lastWidth = pagesEl.clientWidth;
     pageViewports.forEach((base, i) => {
-      const scale = (width / base.width) * zoom;
-      wrappers[i].style.width = `${Math.floor(base.width * scale)}px`;
-      wrappers[i].style.height = `${Math.floor(base.height * scale)}px`;
+      const pageScale = (width / base.width) * scale;
+      wrappers[i].style.width = `${Math.floor(base.width * pageScale)}px`;
+      wrappers[i].style.height = `${Math.floor(base.height * pageScale)}px`;
+    });
+  }
+
+  function updateZoomPreview() {
+    let offset = 0;
+    wrappers.forEach((wrapper) => {
+      const canvas = wrapper.querySelector('canvas');
+      const canvasZoom = Number(canvas?.dataset.zoom) || renderedZoom;
+      const ratio = zoom / canvasZoom;
+      canvas?.style.removeProperty('transform');
+      canvas?.style.removeProperty('transform-origin');
+      if (Math.abs(ratio - 1) < 0.001 && Math.abs(offset) < 0.001) {
+        wrapper.style.removeProperty('transform');
+        wrapper.style.removeProperty('transform-origin');
+      } else {
+        wrapper.style.transformOrigin = 'center top';
+        wrapper.style.transform = `translateY(${offset}px) scale(${ratio})`;
+      }
+      offset += wrapper.offsetHeight * (ratio - 1);
+    });
+  }
+
+  function commitZoomPreview() {
+    wrappers.forEach((wrapper) => {
+      const canvas = wrapper.querySelector('canvas');
+      if (canvas) {
+        const canvasZoom = Number(canvas.dataset.zoom) || renderedZoom;
+        const ratio = zoom / canvasZoom;
+        if (Math.abs(ratio - 1) < 0.001) {
+          canvas.style.removeProperty('transform');
+          canvas.style.removeProperty('transform-origin');
+        } else {
+          canvas.style.transformOrigin = 'center top';
+          canvas.style.transform = `scale(${ratio})`;
+        }
+      }
+      wrapper.style.removeProperty('transform');
+      wrapper.style.removeProperty('transform-origin');
     });
   }
 
   async function renderAll() {
+    clearTimeout(zoomRenderTimer);
+    zoomRenderTimer = null;
     const gen = ++generation;
+    const renderZoom = zoom;
+    const anchorWrapper = wrappers[current - 1];
+    const anchorCanvas = anchorWrapper?.querySelector('canvas');
+    const anchorZoom = Number(anchorCanvas?.dataset.zoom) || renderedZoom;
+    const anchorOffset = anchorWrapper ? pagesEl.scrollTop - anchorWrapper.offsetTop : 0;
+    commitZoomPreview();
     renderTasks.forEach((task) => task.cancel());
     renderTasks = [];
-    layout();
-    scrollToPage(current, false);
+    layout(renderZoom);
+    if (anchorWrapper) {
+      pagesEl.scrollTop = Math.max(0, anchorWrapper.offsetTop + anchorOffset * (renderZoom / anchorZoom));
+    }
     const width = availableWidth();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     for (let i = 1; i <= numPages(); i++) {
       const page = await pdf.getPage(i);
       if (gen !== generation || destroyed) return;
       const base = page.getViewport({ scale: 1 });
-      const viewport = page.getViewport({ scale: (width / base.width) * zoom });
+      const viewport = page.getViewport({ scale: (width / base.width) * renderZoom });
       const canvas = document.createElement('canvas');
       canvas.width = Math.floor(viewport.width * dpr);
       canvas.height = Math.floor(viewport.height * dpr);
       canvas.style.width = `${Math.floor(viewport.width)}px`;
       canvas.style.height = `${Math.floor(viewport.height)}px`;
+      canvas.dataset.zoom = String(renderZoom);
       canvas.setAttribute('role', 'img');
       canvas.setAttribute('aria-label', `Pagina ${i} din ${numPages()} a fișei „${title}”`);
       const task = page.render({
@@ -106,6 +156,7 @@ export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
       if (gen !== generation || destroyed) return;
       wrappers[i - 1].replaceChildren(canvas);
     }
+    if (gen === generation && !destroyed) renderedZoom = renderZoom;
   }
 
   function scrollToPage(n, smooth = true) {
@@ -129,7 +180,12 @@ export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
 
   function setZoom(value) {
     zoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, value));
-    renderAll().catch(showError);
+    generation++;
+    renderTasks.forEach((task) => task.cancel());
+    renderTasks = [];
+    updateZoomPreview();
+    clearTimeout(zoomRenderTimer);
+    zoomRenderTimer = setTimeout(() => renderAll().catch(showError), 100);
   }
 
   function showError(error) {
@@ -156,7 +212,7 @@ export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
     touches[0].clientY - touches[1].clientY,
   );
   pagesEl.addEventListener('touchstart', (event) => {
-    if (event.touches.length !== 2) return;
+    if (event.touches.length !== 2 || !numPages()) return;
     pinchStartDistance = touchDistance(event.touches);
     pinchStartZoom = zoom;
     pinchChanged = false;
@@ -164,8 +220,15 @@ export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
   pagesEl.addEventListener('touchmove', (event) => {
     if (event.touches.length !== 2 || !pinchStartDistance) return;
     event.preventDefault();
+    if (!pinchChanged) {
+      generation++;
+      renderTasks.forEach((task) => task.cancel());
+      renderTasks = [];
+      clearTimeout(zoomRenderTimer);
+      zoomRenderTimer = null;
+    }
     zoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, pinchStartZoom * touchDistance(event.touches) / pinchStartDistance));
-    layout();
+    updateZoomPreview();
     pinchChanged = true;
   }, { passive: false });
   const finishPinch = () => {
@@ -233,6 +296,7 @@ export function createPDFViewer({ url, title, originalUrl = assetUrl(url) }) {
       destroyed = true;
       generation++;
       clearTimeout(resizeTimer);
+      clearTimeout(zoomRenderTimer);
       renderTasks.forEach((task) => task.cancel());
       resizeObserver.disconnect();
       loadingTask?.destroy();

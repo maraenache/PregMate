@@ -77,6 +77,143 @@
     ]
   },
   {
+    "id": "patrulatere-f01",
+    "lessonId": "patrulatere",
+    "name": "Suma unghiurilor unui patrulater",
+    "latex": "\\angle A + \\angle B + \\angle C + \\angle D = 360^\\circ",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": ["patrulater", "unghiuri", "suma unghiurilor"]
+  },
+  {
+    "id": "patrulatere-f02",
+    "lessonId": "patrulatere",
+    "name": "Perimetrul unui patrulater",
+    "latex": "P_{ABCD} = AB + BC + CD + DA",
+    "variables": [
+      {"symbol": "P_{ABCD}", "meaning": "perimetrul patrulaterului ABCD"}
+    ],
+    "sourcePage": 1,
+    "keywords": ["perimetru", "patrulater"]
+  },
+  {
+    "id": "patrulatere-f03",
+    "lessonId": "patrulatere",
+    "name": "Patrulatere convexe și concave",
+    "latex": [
+      "\\text{convex: toate unghiurile interioare} < 180^\\circ",
+      "\\text{concav: un unghi interior} > 180^\\circ"
+    ],
+    "conditions": "La un patrulater convex, diagonalele sunt în interior. La unul concav, o diagonală trece prin exterior.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": ["convex", "concav", "clasificare"]
+  },
+  {
+    "id": "patrulatere-f04",
+    "lessonId": "patrulatere",
+    "name": "Proprietățile paralelogramului",
+    "latex": [
+      "AB = DC, \\quad AD = BC",
+      "\\angle A = \\angle C, \\quad \\angle B = \\angle D",
+      "\\angle A + \\angle B = 180^\\circ",
+      "AO = OC, \\quad BO = OD"
+    ],
+    "conditions": "Laturile și unghiurile opuse sunt egale; unghiurile alăturate sunt suplementare. Diagonalele se înjumătățesc, dar în general nu sunt egale.",
+    "variables": [],
+    "sourcePage": 1,
+    "keywords": ["paralelogram", "laturi opuse", "unghiuri opuse", "diagonale"]
+  },
+  {
+    "id": "patrulatere-f05",
+    "lessonId": "patrulatere",
+    "name": "Proprietățile rombului",
+    "latex": [
+      "AB = BC = CD = DA",
+      "\\angle A = \\angle C, \\quad \\angle B = \\angle D",
+      "AO = OC, \\quad BO = OD",
+      "AC \\perp BD",
+      "\\angle DAC = \\angle BAC"
+    ],
+    "conditions": "Toate laturile sunt egale. Diagonalele se înjumătățesc, sunt perpendiculare și bisectează unghiurile rombului.",
+    "variables": [],
+    "sourcePage": 2,
+    "keywords": ["romb", "diagonale perpendiculare", "bisectoare", "laturi egale"]
+  },
+  {
+    "id": "patrulatere-f06",
+    "lessonId": "patrulatere",
+    "name": "Proprietățile dreptunghiului",
+    "latex": [
+      "AB = CD, \\quad AD = BC",
+      "\\angle A = \\angle B = \\angle C = \\angle D = 90^\\circ",
+      "AC = BD",
+      "AO = OC = BO = OD"
+    ],
+    "conditions": "Laturile opuse sunt egale. Diagonalele sunt egale și se înjumătățesc în O.",
+    "variables": [],
+    "sourcePage": 3,
+    "keywords": ["dreptunghi", "unghi drept", "diagonale egale"]
+  },
+  {
+    "id": "patrulatere-f07",
+    "lessonId": "patrulatere",
+    "name": "Proprietățile pătratului",
+    "latex": [
+      "AB = BC = CD = DA",
+      "\\angle A = \\angle B = \\angle C = \\angle D = 90^\\circ",
+      "AC = BD, \\quad AO = OC = BO = OD",
+      "AC \\perp BD",
+      "\\angle DAC = \\angle CAB = 45^\\circ"
+    ],
+    "conditions": "Diagonalele sunt egale, se înjumătățesc, sunt perpendiculare și bisectează unghiurile pătratului.",
+    "variables": [],
+    "sourcePage": 3,
+    "keywords": ["pătrat", "diagonale", "unghiuri de 45°"]
+  },
+  {
+    "id": "patrulatere-f08",
+    "lessonId": "patrulatere",
+    "name": "Definiția și înălțimea trapezului",
+    "latex": [
+      "AB \\parallel DC",
+      "DE \\perp AB, \\quad DE \\perp DC",
+      "P_{ABCD} = AB + BC + CD + DA"
+    ],
+    "conditions": "AB și DC sunt bazele trapezului. Înălțimea este perpendiculară pe baze.",
+    "variables": [],
+    "sourcePage": 4,
+    "keywords": ["trapez", "baze", "înălțime", "perimetru"]
+  },
+  {
+    "id": "patrulatere-f09",
+    "lessonId": "patrulatere",
+    "name": "Linia mijlocie a trapezului",
+    "latex": "m = \\frac{B + b}{2}",
+    "conditions": "Linia mijlocie este paralelă cu bazele trapezului.",
+    "variables": [
+      {"symbol": "B", "meaning": "baza mare"},
+      {"symbol": "b", "meaning": "baza mică"},
+      {"symbol": "m", "meaning": "linia mijlocie"}
+    ],
+    "sourcePage": 4,
+    "keywords": ["trapez", "linie mijlocie", "baza mare", "baza mică"]
+  },
+  {
+    "id": "patrulatere-f10",
+    "lessonId": "patrulatere",
+    "name": "Trapez isoscel și trapez dreptunghic",
+    "latex": [
+      "AD = BC",
+      "\\angle A = \\angle B, \\quad \\angle D = \\angle C",
+      "\\angle A = \\angle D = 90^\\circ"
+    ],
+    "conditions": "În trapezul isoscel, laturile neparalele sunt egale, iar unghiurile de la aceeași bază sunt egale. Trapezul dreptunghic are două unghiuri drepte.",
+    "variables": [],
+    "sourcePage": 4,
+    "keywords": ["trapez isoscel", "trapez dreptunghic"]
+  },
+  {
     "id": "triunghiuri-f01",
     "lessonId": "triunghiuri",
     "name": "Suma unghiurilor unui triunghi",

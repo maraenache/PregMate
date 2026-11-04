@@ -36,11 +36,14 @@ document.querySelector('[data-skip]')?.addEventListener('click', (event) => {
 
 let currentPage = null;
 let firstRender = true;
+let currentLessonId = null;
 
 function render() {
   currentPage?.destroy?.();
   const previousRouteName = currentRouteName;
+  const previousLessonId = currentLessonId;
   const route = parseHash(window.location.hash);
+  const changingLessons = route.name === 'lesson' && previousRouteName === 'lesson' && route.id !== previousLessonId;
   let page;
   if (route.name === 'dashboard') page = createDashboard();
   else if (route.name === 'formulas') page = createFormulasPage();
@@ -50,9 +53,11 @@ function render() {
     page = lesson ? createLessonPage(lesson) : createNotFound('Lecția căutată nu există.');
   } else page = createNotFound();
 
+  if (changingLessons) page.el.classList.add('lesson-page-transition');
   main.replaceChildren(page.el);
   header.setActive(route.name);
   currentRouteName = route.name;
+  currentLessonId = route.name === 'lesson' ? route.id : null;
   document.title = page.title ? `${page.title} — Recapitulare Geometrie` : 'Recapitulare Geometrie';
   if (route.name === 'dashboard' && previousRouteName === 'lesson') {
     window.requestAnimationFrame(() => window.scrollTo(0, dashboardScrollY));

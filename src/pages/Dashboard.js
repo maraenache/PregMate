@@ -34,6 +34,8 @@ export function createDashboard() {
     autocomplete: 'off',
     spellcheck: 'false',
   });
+  const searchIcon = h('span', { class: 'search-icon', 'aria-hidden': 'true' });
+  searchIcon.innerHTML = '<svg viewBox="0 0 24 24" focusable="false"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>';
   const resultCount = h('p', { class: 'muted small', 'aria-live': 'polite', id: 'search-count' });
   const grid = h('div', { class: 'lesson-grid' });
 
@@ -97,7 +99,7 @@ export function createDashboard() {
           'div',
           { class: 'search' },
           h('label', { for: 'lesson-search', class: 'search-label' }, 'Caută o lecție'),
-          searchInput,
+          h('div', { class: 'search-input-wrap' }, searchIcon, searchInput),
           resultCount,
         ),
       ),

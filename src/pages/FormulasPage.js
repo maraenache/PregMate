@@ -9,6 +9,50 @@ const CHEVRONS = {
   down: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 10 6 6 6-6"/></svg>',
 };
 
+const disclosureAnimations = new WeakMap();
+
+function animateDisclosure(element, expanded) {
+  disclosureAnimations.get(element)?.cancel();
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!element.animate || reduceMotion) {
+    element.hidden = !expanded;
+    return;
+  }
+
+  if (expanded) {
+    element.hidden = false;
+    const height = element.scrollHeight;
+    const animation = element.animate(
+      [{ height: '0px', opacity: 0, overflow: 'hidden' }, { height: `${height}px`, opacity: 1, overflow: 'hidden' }],
+      { duration: 220, easing: 'ease-out' },
+    );
+    disclosureAnimations.set(element, animation);
+    animation.onfinish = () => {
+      if (disclosureAnimations.get(element) !== animation) return;
+      element.style.removeProperty('height');
+      element.style.removeProperty('opacity');
+      element.style.removeProperty('overflow');
+      disclosureAnimations.delete(element);
+    };
+    return;
+  }
+
+  const height = element.getBoundingClientRect().height;
+  const animation = element.animate(
+    [{ height: `${height}px`, opacity: 1, overflow: 'hidden' }, { height: '0px', opacity: 0, overflow: 'hidden' }],
+    { duration: 180, easing: 'ease-in' },
+  );
+  disclosureAnimations.set(element, animation);
+  animation.onfinish = () => {
+    if (disclosureAnimations.get(element) !== animation) return;
+    element.hidden = true;
+    element.style.removeProperty('height');
+    element.style.removeProperty('opacity');
+    element.style.removeProperty('overflow');
+    disclosureAnimations.delete(element);
+  };
+}
+
 function formulaCard(formula, lesson, initiallyExpanded = false) {
   const chevron = h('span', { class: 'formula-chevron', 'aria-hidden': 'true' });
   chevron.innerHTML = initiallyExpanded ? CHEVRONS.up : CHEVRONS.down;
@@ -41,7 +85,7 @@ function formulaCard(formula, lesson, initiallyExpanded = false) {
   const toggleFormula = () => {
     const expanded = titleButton.getAttribute('aria-expanded') === 'true';
     titleButton.setAttribute('aria-expanded', String(!expanded));
-    content.hidden = expanded;
+    animateDisclosure(content, !expanded);
     chevron.innerHTML = expanded ? CHEVRONS.down : CHEVRONS.up;
   };
   titleButton.addEventListener('click', toggleFormula);
@@ -99,7 +143,7 @@ export function createFormulasPage() {
       groupToggle.addEventListener('click', () => {
         const expanded = groupToggle.getAttribute('aria-expanded') === 'true';
         groupToggle.setAttribute('aria-expanded', String(!expanded));
-        groupContent.hidden = expanded;
+        animateDisclosure(groupContent, !expanded);
         groupToggle.textContent = expanded ? 'Arată formulele' : 'Ascunde formulele';
       });
       groups.push(

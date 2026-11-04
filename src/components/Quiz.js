@@ -22,7 +22,7 @@ function shuffle(items) {
   return result;
 }
 
-export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLesson, onShowPage }) {
+export function createQuiz({ lesson, questions, onFinish, onBackToLesson, onShowPage }) {
   const el = h('div', { class: 'quiz', 'aria-live': 'off' });
   let index = 0;
   let correctCount = 0;
@@ -84,8 +84,8 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
       }
       options.forEach(({ input, label }, i) => {
         input.disabled = true;
-        if (i === question.correctIndex) label.classList.add('is-correct');
-        else if (i === selected) label.classList.add('is-wrong');
+        if (i === question.correctIndex) label.classList.add('is-correct', 'answer-correct');
+        else if (i === selected) label.classList.add('is-wrong', 'answer-wrong');
       });
       feedback.className = `quiz-feedback ${correct ? 'feedback-correct' : 'feedback-wrong'}`;
       feedback.replaceChildren(
@@ -130,6 +130,7 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
   function renderResults() {
     const total = runQuestions.length;
     const percent = Math.round((correctCount / total) * 100);
+    const celebrate = percent === 100 && !reviewingMistakes;
     if (!reviewingMistakes) {
       setScore(lesson.id, correctCount, total);
       onFinish?.({ correct: correctCount, total });
@@ -163,7 +164,12 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
     el.replaceChildren(
       h(
         'div',
-        { class: 'quiz-results' },
+        { class: `quiz-results${celebrate ? ' quiz-results-perfect' : ''}` },
+        celebrate && h(
+          'div',
+          { class: 'quiz-celebration', 'aria-hidden': 'true' },
+          Array.from({ length: 12 }, () => h('span', { class: 'confetti-piece' })),
+        ),
         heading,
         h(
           'div',
@@ -187,7 +193,6 @@ export function createQuiz({ lesson, questions, nextLesson, onFinish, onBackToLe
             : null,
           h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, 'Repetă testul'),
           h('button', { type: 'button', class: 'btn btn-secondary', onClick: () => onBackToLesson?.() }, backLabel),
-          nextLesson && h('a', { class: 'btn btn-secondary', href: lessonHref(nextLesson.id) }, 'Lecția următoare'),
         ),
       ),
     );

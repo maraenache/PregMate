@@ -37,12 +37,52 @@ export function createLessonPage(lesson) {
     { class: 'study-content', id: 'study-content' },
     viewer.el,
   );
+  let studyAnimation;
+  const animateStudyContent = (expanded) => {
+    studyAnimation?.cancel();
+    studyContent.inert = !expanded;
+    studyContent.setAttribute('aria-hidden', String(!expanded));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!studyContent.animate || reduceMotion) {
+      studyContent.hidden = !expanded;
+    } else if (expanded) {
+      studyContent.hidden = false;
+      const height = studyContent.scrollHeight;
+      studyAnimation = studyContent.animate(
+        [{ height: '0px', opacity: 0, overflow: 'hidden' }, { height: `${height}px`, opacity: 1, overflow: 'hidden' }],
+        { duration: 240, easing: 'ease-out' },
+      );
+      studyAnimation.onfinish = () => {
+        studyContent.style.removeProperty('height');
+        studyContent.style.removeProperty('opacity');
+        studyContent.style.removeProperty('overflow');
+      };
+    } else {
+      const height = studyContent.getBoundingClientRect().height;
+      studyAnimation = studyContent.animate(
+        [{ height: `${height}px`, opacity: 1, overflow: 'hidden' }, { height: '0px', opacity: 0, overflow: 'hidden' }],
+        { duration: 200, easing: 'ease-in' },
+      );
+      studyAnimation.onfinish = () => {
+        studyContent.hidden = true;
+        studyContent.style.removeProperty('height');
+        studyContent.style.removeProperty('opacity');
+        studyContent.style.removeProperty('overflow');
+      };
+    }
+    if (expanded) {
+      requestAnimationFrame(() => {
+        viewer.el.classList.add('is-refreshing');
+        viewer.refresh().finally(() => viewer.el.classList.remove('is-refreshing'));
+      });
+    }
+  };
   studyToggle = h('button', { type: 'button', class: 'btn btn-icon icon-action study-toggle', 'aria-expanded': 'true', 'aria-controls': 'study-content' });
   setIconButton(studyToggle, ICONS.collapse, 'Ascunde PDF');
   studyToggle.addEventListener('click', () => {
     const expanded = studyToggle.getAttribute('aria-expanded') === 'true';
     studyToggle.setAttribute('aria-expanded', String(!expanded));
-    viewer.el.classList.toggle('is-collapsed', expanded);
+    animateStudyContent(!expanded);
     setIconButton(studyToggle, expanded ? ICONS.expandPanel : ICONS.collapse, expanded ? 'Afișează PDF' : 'Ascunde PDF');
     const study = studyToggle.closest('.lesson-study');
     study?.classList.toggle('is-expanded', !expanded);
@@ -51,12 +91,6 @@ export function createLessonPage(lesson) {
       readingToggle.setAttribute('aria-pressed', 'false');
       setIconButton(readingToggle, ICONS.expand, 'Citește pe tot ecranul');
       pdfToolbar?.append(readingToggle);
-    }
-    if (!expanded) {
-      viewer.el.classList.add('is-refreshing');
-      requestAnimationFrame(() => {
-        viewer.refresh().finally(() => viewer.el.classList.remove('is-refreshing'));
-      });
     }
   });
   readingToggle = h('button', { type: 'button', class: 'btn btn-icon icon-action reading-toggle', 'aria-pressed': 'false' });
@@ -72,7 +106,6 @@ export function createLessonPage(lesson) {
     else pdfToolbar?.append(readingToggle);
     if (nextActive) {
       studyToggle.setAttribute('aria-expanded', 'true');
-      viewer.el.classList.remove('is-collapsed');
       setIconButton(studyToggle, ICONS.collapse, 'Ascunde PDF');
       studyToggle.closest('.lesson-study')?.classList.add('is-expanded');
     }
@@ -87,14 +120,21 @@ export function createLessonPage(lesson) {
 
   const checkbox = h('input', { type: 'checkbox', id: 'lesson-complete', checked: isCompleted(lesson.id) });
   const completionLabel = h('span', { class: 'completion-state' });
+  const completionCard = h('div', { class: `card completion${checkbox.checked ? ' is-completed' : ''}` });
   const updateCompletion = () => {
-    completionLabel.textContent = checkbox.checked ? 'Lecție învățată' : '';
+    completionLabel.textContent = checkbox.checked ? '✓ Lecție învățată' : '';
+    completionLabel.classList.toggle('is-visible', checkbox.checked);
+    completionCard.classList.toggle('is-completed', checkbox.checked);
   };
   checkbox.addEventListener('change', () => {
     setCompleted(lesson.id, checkbox.checked);
     updateCompletion();
   });
   updateCompletion();
+  completionCard.append(
+    h('label', { class: 'checkbox', for: 'lesson-complete' }, checkbox, h('span', {}, 'Marchează lecția ca învățată')),
+    completionLabel,
+  );
 
   const titleEl = h('h1', { id: 'page-title', tabindex: '-1' }, lesson.title);
 
@@ -113,7 +153,6 @@ export function createLessonPage(lesson) {
     const quiz = createQuiz({
       lesson,
       questions: questionSet,
-      nextLesson: next,
       onFinish: () => {
         scoreEl.textContent = scoreText();
       },
@@ -164,12 +203,7 @@ export function createLessonPage(lesson) {
       ),
       studyContent,
     ),
-    h(
-      'div',
-      { class: 'card completion' },
-      h('label', { class: 'checkbox', for: 'lesson-complete' }, checkbox, h('span', {}, 'Marchează lecția ca învățată')),
-      completionLabel,
-    ),
+    completionCard,
     quizSection,
     h(
       'nav',
