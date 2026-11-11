@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="01fe095d-85d8-485d-8198-9dac0533dbc3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pdf/triunghiuri-dreptunghice-3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/pdf/triunghiuri-dreptunghice-3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/pdf/unghiuri.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/pdf/unghiuri.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/lessons.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/lessons.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/detailedQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/detailedQuestions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/questions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LessonPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LessonPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +17,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3LYIvs7tbGhOG3BA2krPDi73SRX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,6 +30,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",

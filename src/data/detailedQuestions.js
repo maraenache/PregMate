@@ -32,9 +32,82 @@ function generated(lessonId) {
   switch (lessonId) {
     case 'unghiuri': {
       const result = [];
-      [12, 18, 27, 34, 41, 48, 55, 63, 72, 84].forEach((a, i) => result.push(q(i + 1, `Care este complementul unghiului de ${a}°?`, 90 - a, '°', `Unghiurile complementare au suma 90°, deci 90° − ${a}° = ${90 - a}°.` , 1, [a, 180 - a, 90 + a])));
-      [15, 24, 36, 47, 58, 69, 82, 95, 117, 143].forEach((a, i) => result.push(q(i + 11, `Care este suplementul unghiului de ${a}°?`, 180 - a, '°', `Unghiurile suplementare au suma 180°, deci 180° − ${a}° = ${180 - a}°.` , 1, [a, 90 - a, 180 + a])));
-      [16, 22, 29, 33, 38, 44, 52, 61, 73, 81].forEach((a, i) => result.push(q(i + 21, `OP este bisectoarea lui ∠MON, iar m(∠MOP) = ${a}°. Cât măsoară ∠MON?`, 2 * a, '°', `Bisectoarea împarte unghiul în două unghiuri egale: 2 · ${a}° = ${2 * a}°.` , 2, [a, 90 - a, 180 - 2 * a])));
+      const add = (prompt, answer, wrong, explanation, page = 1, diagram = null) => {
+        result.push(text(result.length + 1, prompt, answer, wrong, explanation, page));
+        if (diagram) result.at(-1).diagram = diagram;
+      };
+      const dms = (degrees, minutes, seconds) => {
+        const total = degrees * 3600 + minutes * 60 + seconds;
+        const d = Math.floor(total / 3600);
+        const m = Math.floor((total % 3600) / 60);
+        const s = total % 60;
+        return `${d}° ${m}′ ${s}″`;
+      };
+      const subtractDms = (bound, degrees, minutes, seconds) => {
+        const total = bound * 3600 - (degrees * 3600 + minutes * 60 + seconds);
+        return dms(Math.floor(total / 3600), Math.floor((total % 3600) / 60), total % 60);
+      };
+
+      // Complemente/suplemente: grade simple și scăderi cu minute și secunde.
+      [28].forEach((angle) => add(
+        `Pentru un unghi de ${angle}°: cât măsoară complementul?`, `${90 - angle}°`,
+        [`${180 - angle}°`, `${angle}°`, `${90 + angle}°`],
+        `Unghiurile complementare au suma 90°: 90° − ${angle}° = ${90 - angle}°.`));
+      const complementDms = [[32, 18, 25], [47, 36, 40]];
+      complementDms.forEach(([d, m, s]) => {
+        const answer = subtractDms(90, d, m, s);
+        add(`Unghiul A are ${dms(d, m, s)}. Cât măsoară complementul lui A?`, answer,
+          [dms(90 - d, m, s), dms(d, 60 - m, 60 - s), dms(180 - d, m, s)],
+          `Scădem din 90°: 90° − ${dms(d, m, s)} = ${answer}.`);
+      });
+      [35].forEach((angle) => add(
+        `Cât măsoară suplementul unghiului de ${angle}°?`, `${180 - angle}°`,
+        [`${90 - angle}°`, `${angle}°`, `${180 + angle}°`],
+        `Unghiurile suplementare au suma 180°: 180° − ${angle}° = ${180 - angle}°.`));
+      const supplementDms = [[72, 24, 35], [113, 42, 18]];
+      supplementDms.forEach(([d, m, s]) => {
+        const answer = subtractDms(180, d, m, s);
+        add(`Unghiul B are ${dms(d, m, s)}. Cât măsoară suplementul lui B?`, answer,
+          [dms(180 - d, m, s), dms(d, 60 - m, 60 - s), subtractDms(90, d, m, s)],
+          `Scădem din 180°: 180° − ${dms(d, m, s)} = ${answer}.`);
+      });
+
+      // Recunoașterea și proprietățile tipurilor de unghiuri.
+      [
+        ['Ce măsură are un unghi ascuțit?', 'mai mică de 90°', ['egală cu 90°', 'între 90° și 180°', 'egală cu 180°']],
+        ['Cum se numește un unghi de 90°?', 'unghi drept', ['unghi obtuz', 'unghi alungit', 'unghi ascuțit']],
+        ['Ce relație au unghiurile opuse la vârf?', 'sunt egale', ['sunt complementare', 'sunt suplementare întotdeauna', 'au laturile comune']],
+        ['Două unghiuri adiacente au în comun:', 'vârful și o latură', ['doar vârful', 'două laturi', 'nicio latură']],
+        ['Dacă o secantă taie două drepte paralele, unghiurile corespondente sunt:', 'egale', ['suplementare', 'complementare', 'mereu drepte']],
+        ['Dacă două drepte paralele sunt tăiate de o secantă, unghiurile alterne interne sunt:', 'egale', ['suplementare', 'complementare', 'adiacente']],
+        ['Unghiurile alterne externe formate de o secantă cu două paralele sunt:', 'egale', ['suplementare', 'complementare', 'opuse la vârf în toate cazurile']],
+      ].forEach(([prompt, answer, wrong]) => add(prompt, answer, wrong,
+        'Aplică definiția și proprietatea unghiurilor din configurația descrisă.'));
+
+      // Unghiuri adiacente: atât suma unghiurilor mici, cât și diferența față de unghiul mare.
+      add('Două unghiuri adiacente formează un unghi de 124°. Unul măsoară 51°. Cât măsoară celălalt?', '73°', ['63°', '75°', '175°'], 'Unghiurile alăturate însumează unghiul mare: 124° − 51° = 73°.', 1, 'adjacent');
+      add('Unghiurile AOB și BOC sunt adiacente, iar ∠AOC = 90°. Dacă ∠AOB = 34°, cât este ∠BOC?', '56°', ['34°', '66°', '124°'], '∠BOC = 90° − 34° = 56°.', 1, 'adjacent');
+      add('Unghiul mare format de două unghiuri adiacente este 147°, iar unul dintre ele este 68°. Cât măsoară celălalt?', '79°', ['68°', '89°', '215°'], 'Unghiul necunoscut este diferența: 147° − 68° = 79°.', 1, 'adjacent');
+      add('Două unghiuri adiacente formează un unghi alungit. Dacă unul măsoară 116°, cât măsoară celălalt?', '64°', ['74°', '116°', '296°'], 'Unghiurile de pe o dreaptă au suma 180°: 180° − 116° = 64°.', 1, 'adjacent-straight');
+
+      // Bisectoare: determinarea unghiului întreg sau a unei jumătăți, inclusiv DMS.
+      add('OP este bisectoarea unghiului AOB. Dacă ∠AOP = 37°, cât măsoară ∠AOB?', '74°', ['37°', '53°', '143°'], 'Bisectoarea formează două unghiuri egale: 2 · 37° = 74°.', 1, 'bisector');
+      add('OP este bisectoarea unghiului AOB, care măsoară 126°. Cât măsoară ∠AOP?', '63°', ['52°', '126°', '252°'], 'Bisectoarea împarte unghiul în două unghiuri egale: 126° : 2 = 63°.', 1, 'bisector');
+      add('OP este bisectoarea unui unghi de 84° 36′. Cât măsoară fiecare dintre cele două unghiuri obținute?', '42° 18′', ['42° 36′', '84° 18′', '41° 18′'], 'Împărțim gradele și minutele la 2: 84° 36′ : 2 = 42° 18′.', 2, 'bisector');
+      add('Bisectoarea unghiului AOB îl împarte în două unghiuri egale, fiecare de 28° 14′ 30″. Cât măsoară ∠AOB?', '56° 29′', ['56° 28′ 30″', '28° 14′ 30″', '112° 58′'], 'Adunăm cele două jumătăți egale: 2 · 28° 14′ 30″ = 56° 29′.', 2, 'bisector');
+
+      // Unghiuri opuse la vârf și suma unghiurilor în jurul unui punct.
+      add('Două drepte se intersectează. Un unghi măsoară 68°. Cât măsoară unghiul opus la vârf?', '68°', ['112°', '22°', '180°'], 'Unghiurile opuse la vârf sunt egale.', 1, 'vertical');
+      add('Două drepte se intersectează. Un unghi măsoară 127°. Cât măsoară fiecare unghi adiacent lui?', '53°', ['63°', '127°', '233°'], 'Unghiurile adiacente formate de drepte sunt suplementare: 180° − 127° = 53°.', 1, 'vertical-adjacent');
+      add('În jurul punctului O sunt trei unghiuri de 95°, 120° și x. Cât este x?', '145°', ['135°', '155°', '265°'], 'Unghiurile în jurul unui punct au suma 360°: x = 360° − 95° − 120° = 145°.', 1, 'around-point');
+      add('În jurul unui punct sunt unghiurile 82° 15′, 104° 30′ și x. Cât este x?', '173° 15′', ['173° 45′', '174° 15′', '153° 15′'], '360° − 82° 15′ − 104° 30′ = 173° 15′.', 2, 'around-point-dms');
+      add('În jurul punctului O sunt patru unghiuri egale. Cât măsoară fiecare?', '90°', ['45°', '120°', '180°'], '360° : 4 = 90°.', 1, 'around-point-equal');
+
+      // Secantă și paralele: pozițiile și relațiile dintre perechile de unghiuri.
+      add('Două drepte sunt tăiate de o secantă. Unde se află unghiurile corespondente?', 'În aceeași poziție față de fiecare dreaptă și de secantă', ['Între cele două drepte și de părți opuse ale secantei', 'În exteriorul celor două drepte și de aceeași parte a secantei', 'De o parte și de alta a aceluiași vârf'], 'Unghiurile corespondente ocupă aceeași poziție la cele două intersecții.', 1, 'corresponding');
+      add('Două drepte paralele sunt tăiate de o secantă. Ce proprietate au unghiurile corespondente?', 'Sunt egale', ['Sunt suplementare', 'Sunt complementare', 'Au întotdeauna măsura de 90°'], 'Dacă dreptele sunt paralele, unghiurile corespondente sunt egale.', 1, 'corresponding');
+      add('Două drepte sunt tăiate de o secantă. Unde se află unghiurile alterne interne?', 'Între cele două drepte și de părți opuse ale secantei', ['În exteriorul celor două drepte și de aceeași parte a secantei', 'Între cele două drepte și de aceeași parte a secantei', 'În aceeași poziție la cele două intersecții'], 'Unghiurile alterne interne se află între drepte, de o parte și de alta a secantei.', 1, 'alternate-interior');
+      add('Două drepte paralele sunt tăiate de o secantă. Ce proprietate au unghiurile alterne interne?', 'Sunt egale', ['Sunt suplementare', 'Sunt complementare', 'Sunt întotdeauna unghiuri drepte'], 'Când dreptele sunt paralele, unghiurile alterne interne sunt egale.', 1, 'alternate-interior');
       return result;
     }
     case 'triunghiuri': {

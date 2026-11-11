@@ -109,7 +109,8 @@
     ],
     "correctIndex": 2,
     "explanation": "Pentru bisectoare, m(∠MON) = 2 · m(∠MOP) = 2 · 35° = 70°.",
-    "sourcePage": 2
+    "sourcePage": 2,
+    "diagram": "bisector"
   },
   {
     "id": "unghiuri-q09",
@@ -123,7 +124,8 @@
     ],
     "correctIndex": 1,
     "explanation": "Unghiurile aflate față în față la intersecția a două drepte se numesc opuse la vârf și sunt întotdeauna egale.",
-    "sourcePage": 2
+    "sourcePage": 2,
+    "diagram": "vertical"
   },
   {
     "id": "unghiuri-q10",
@@ -137,7 +139,8 @@
     ],
     "correctIndex": 2,
     "explanation": "Pentru unghiuri adiacente, m(∠AOB) + m(∠BOC) = m(∠AOC) = 30° + 40° = 70°.",
-    "sourcePage": 2
+    "sourcePage": 2,
+    "diagram": "adjacent"
   },
   {
     "id": "triunghiuri-q01",

@@ -940,6 +940,66 @@ a {
   padding: 0;
 }
 
+.quiz-angle-diagram {
+  display: block;
+  width: min(100%, 18rem);
+  height: auto;
+  margin: 0 auto 1rem;
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  color: var(--text-muted);
+  background: var(--surface-2);
+}
+
+.quiz-angle-diagram .diagram-parallel,
+.quiz-angle-diagram .diagram-secant {
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.quiz-angle-diagram .diagram-angle-highlight {
+  fill: var(--teal);
+  fill-opacity: 0.28;
+}
+
+.quiz-angle-diagram .diagram-angle-highlight-secondary {
+  fill: var(--purple);
+}
+
+.quiz-angle-diagram .diagram-angle-highlight-tertiary {
+  fill: var(--orange);
+}
+
+.quiz-angle-diagram .diagram-point {
+  fill: var(--heading);
+  stroke: var(--surface-2);
+  stroke-width: 1.5;
+}
+
+.quiz-angle-diagram .diagram-point-label {
+  fill: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: var(--surface-2);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.quiz-angle-diagram .diagram-measure-label {
+  fill: var(--text);
+  font-size: 10px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: var(--surface-2);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
 .quiz-options {
   display: grid;
   gap: 0.6rem;
